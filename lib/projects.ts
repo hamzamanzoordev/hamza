@@ -134,17 +134,20 @@ export const projects: Project[] = [
 		gallery: [21, 22, 23, 24, 25, 26, 27, 28, 29],
 		featured: true,
 		description:
-			"A full video marketplace where creators buy, sell and share work — end-to-end product build and business website.",
+			"A full video marketplace where creators buy, sell and share work. End-to-end product build and business website.",
 	},
 	{
 		slug: "paintedbyus",
 		title: "PaintedByUs",
-		tagline: "A home for human art",
+		tagline: "Human-made art marketplace",
 		category: "web",
-		tags: ["Next.js", "E-commerce"],
+		tags: ["Next.js", "Marketplace", "E-commerce"],
+		url: "https://paintedbyus.org",
 		cover: 30,
 		gallery: [30, 31, 32, 33, 34, 35],
-		description: "An art marketplace connecting collectors with human-made, commissioned artwork.",
+		featured: true,
+		description:
+			"A marketplace for original paintings, illustrations and mixed-media work from verified independent artists. No AI, no prints, only real human-made art.",
 	},
 	{
 		slug: "visualsblaze",
