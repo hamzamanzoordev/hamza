@@ -10,7 +10,7 @@ export default function ProofStrip() {
 	return (
 		<section className="hm-marks">
 			<div className="hm-wrap">
-				<p className="hm-marks__label">Shipped and live — click any of them</p>
+				<p className="hm-marks__label">Shipped and live. Click any of them</p>
 				<ul className="hm-marks__list" data-reveal data-reveal-stagger>
 					{CLIENT_MARKS.map((m) => (
 						<li key={m.name}>

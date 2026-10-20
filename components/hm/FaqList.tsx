@@ -18,7 +18,7 @@ export default function FaqList() {
 							Frequently asked <span className="hm-accent">questions</span>
 						</h2>
 						<p className="hm-lede">
-							Everything you need to know before getting in touch — including the
+							Everything you need to know before getting in touch, including the
 							one about price.
 						</p>
 						<p className="hm-faq-intro__contact">

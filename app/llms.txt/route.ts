@@ -53,7 +53,7 @@ function build(): string {
 	push(`- **Role:** ${POSITIONING.role}`)
 	push(`- **Works with:** ${POSITIONING.audience}`)
 	push(`- **Founder of:** ${SITE.company.name} (${SITE.company.url})`)
-	push(`- **Based in:** ${CONTACT.location} — works remotely, worldwide`)
+	push(`- **Based in:** ${CONTACT.location}, works remotely, worldwide`)
 	push(`- **Status:** ${CONTACT.availability}`)
 	push(`- **Website:** ${SITE.url}`)
 	if (SITE.sameAs.length) push(`- **Profiles:** ${SITE.sameAs.join(", ")}`)
@@ -71,7 +71,7 @@ function build(): string {
 
 	/* -------------------------------------------------- Numbers */
 	push("## Verifiable numbers", "")
-	for (const m of METRICS) push(`- **${m.value}** — ${m.label}. (${m.source})`)
+	for (const m of METRICS) push(`- **${m.value}**: ${m.label}. (${m.source})`)
 	push("")
 
 	/* -------------------------------------------------- Services */
@@ -94,19 +94,19 @@ function build(): string {
 	)
 	for (const p of plans) {
 		push(
-			`- **${p.projectName} — ${p.price} ${p.billing}, ${p.timeline}.** ` +
+			`- **${p.projectName}: ${p.price} ${p.billing}, ${p.timeline}.** ` +
 				`For: ${p.tagline}. ${p.details}`,
 		)
 	}
 	push("")
 	push(
-		`**${MAINTENANCE.name} — ${MAINTENANCE.price} ${MAINTENANCE.billing}.**` +
+		`**${MAINTENANCE.name}: ${MAINTENANCE.price} ${MAINTENANCE.billing}.**` +
 			` ${MAINTENANCE.details} Includes:` +
 			` ${MAINTENANCE.features.join("; ")}. ${MAINTENANCE.terms}`,
 		"",
 	)
 	push(
-		`Full product builds — anything with accounts, payments or a mobile app —` +
+		`Full product builds (anything with accounts, payments or a mobile app)` +
 			` are quoted per project and typically land between` +
 			` $${CUSTOM_BUILD_RANGE.min.toLocaleString("en-US")} and` +
 			` $${CUSTOM_BUILD_RANGE.max.toLocaleString("en-US")}, depending on how much` +
@@ -122,7 +122,7 @@ function build(): string {
 		"",
 	)
 	for (const p of projects.filter((p) => p.url)) {
-		push(`- **[${p.title}](${p.url})** — ${p.tagline} ${p.description}`)
+		push(`- **[${p.title}](${p.url})**: ${p.tagline} ${p.description}`)
 	}
 	const unlinked = projects.filter((p) => !p.url)
 	if (unlinked.length) {
@@ -150,7 +150,7 @@ function build(): string {
 
 	/* -------------------------------------------------- Process */
 	push("## How a project runs", "")
-	PROCESS.forEach((step, i) => push(`${i + 1}. **${step.title}** — ${step.body}`))
+	PROCESS.forEach((step, i) => push(`${i + 1}. **${step.title}**: ${step.body}`))
 	push("")
 
 	/* -------------------------------------------------- FAQ, verbatim */
@@ -175,12 +175,12 @@ function build(): string {
 
 	/* -------------------------------------------------- Index */
 	push("## Pages", "")
-	push(`- [Home](${absoluteUrl("/")}) — positioning, services preview, featured work, FAQ`)
-	push(`- [Services](${absoluteUrl("/services")}) — the four service lines in full`)
-	push(`- [Work](${absoluteUrl("/work")}) — all ${projects.length} documented projects`)
-	push(`- [Website Plans](${absoluteUrl("/website-plans")}) — fixed prices and what's in each`)
+	push(`- [Home](${absoluteUrl("/")}): positioning, services preview, featured work, FAQ`)
+	push(`- [Services](${absoluteUrl("/services")}): the four service lines in full`)
+	push(`- [Work](${absoluteUrl("/work")}): all ${projects.length} documented projects`)
+	push(`- [Website Plans](${absoluteUrl("/website-plans")}): fixed prices and what's in each`)
 	for (const c of caseStudies) {
-		push(`- [${c.navLabel} case study](${absoluteUrl(`/case-studies/${c.slug}`)}) — ${c.kind}`)
+		push(`- [${c.navLabel} case study](${absoluteUrl(`/case-studies/${c.slug}`)}): ${c.kind}`)
 	}
 	push("")
 

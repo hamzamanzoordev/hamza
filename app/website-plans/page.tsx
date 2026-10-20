@@ -11,7 +11,7 @@ import { PlansJsonLd, BreadcrumbJsonLd } from "@/components/seo/JsonLd"
 export const metadata = pageMetadata({
 	title: "Website Plans & Pricing",
 	description:
-		"Fixed-price website packages from $499 — scope, timeline and cost stated up front. Business sites, portfolios, stores and custom web apps.",
+		"Fixed-price website packages from $499. Scope, timeline and cost stated up front. Business sites, portfolios, stores and custom web apps.",
 	path: "/website-plans",
 	tag: "Pricing",
 	ogTitle: "The price is on the page",
@@ -130,7 +130,7 @@ export default function WebsitePlans() {
 								Products get <span className="hm-accent">quoted, not listed</span>
 							</>
 						}
-						lede="Anything with accounts, payments, or a mobile app is too variable for a price tag. Those land between $4,000 and $20,000 depending on how much ships in v1 — and I'll give you the number after one call, not three."
+						lede="Anything with accounts, payments, or a mobile app is too variable for a price tag. Those land between $4,000 and $20,000 depending on how much ships in v1, and I'll give you the number after one call, not three."
 						action={{ label: "Book that call", href: "/#contact" }}
 					/>
 				</div>

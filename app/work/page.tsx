@@ -18,7 +18,7 @@ export default function Work() {
 							<span className="hm-accent">{liveProjects.length} you can open right now</span>
 						</h1>
 						<p className="hm-lede">
-							B2B marketplaces, fintech platforms, App Store games and AI assistants —
+							B2B marketplaces, fintech platforms, App Store games and AI assistants,
 							designed, built and launched end-to-end. The {projects.length} below are
 							the ones worth documenting; open any card for the full screen gallery,
 							or click a title to visit the real thing.

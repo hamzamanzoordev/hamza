@@ -12,7 +12,7 @@ export default function Footer1() {
 							Hamza Manzoor
 						</Link>
 						<p className="hm-footer__pitch">
-							Design, web, mobile and backend — built and launched by one person.
+							Design, web, mobile and backend, built and launched by one person.
 						</p>
 						<a className="hm-footer__mail" href={`mailto:${CONTACT.email}`}>
 							{CONTACT.email}
@@ -67,7 +67,7 @@ export default function Footer1() {
 
 				<div className="hm-footer__base">
 					<span>© {new Date().getFullYear()} Hamza Manzoor</span>
-					<span>Built with Next.js — the same stack I build client work in.</span>
+					<span>Built with Next.js, the same stack I build client work in.</span>
 				</div>
 			</div>
 		</footer>

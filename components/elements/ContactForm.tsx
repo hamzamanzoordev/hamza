@@ -50,7 +50,7 @@ export default function ContactForm({
       const data = await res.json().catch(() => ({}))
       if (!res.ok) throw new Error(data.error || 'Something went wrong.')
       setStatus('success')
-      setFeedback('Thanks! Your message has been sent — I’ll get back to you soon.')
+      setFeedback('Thanks! Your message has been sent. I’ll get back to you soon.')
       setForm(blank)
     } catch (err) {
       setStatus('error')

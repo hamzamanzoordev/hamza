@@ -92,7 +92,7 @@ export default function ProjectLightbox({ project, onClose }: ProjectLightboxPro
 						key={index}
 						className="pf-lightbox-img"
 						src={resolveImg(project.gallery[index])}
-						alt={`${project.title} — screen ${index + 1} of ${total}`}
+						alt={`${project.title}, screen ${index + 1} of ${total}`}
 					/>
 					{total > 1 && (
 						<button className="pf-nav pf-nav-next" onClick={() => go(1)} aria-label="Next image">

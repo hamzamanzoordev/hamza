@@ -2238,4 +2238,5 @@ body.reveal-ready .hm-hero__figure {
 	transition: background-color 0.2s ease;
 }
 .hm-nav .dark-light-switcher:hover { background: var(--hm-sunk); }
-.hm-nav .dark-light-switcher i { font-size: 1.05rem; line-height: 1; }
+/* Own the icon colour: the template's .text-white maps to near-black in dark mode. */
+.hm-nav .dark-light-switcher i { font-size: 1.05rem; line-height: 1; color: var(--hm-ink); }

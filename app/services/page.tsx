@@ -14,7 +14,7 @@ import { ServicesJsonLd, BreadcrumbJsonLd } from "@/components/seo/JsonLd"
 export const metadata = pageMetadata({
 	title: "Services",
 	description:
-		"End-to-end product builds, websites, mobile apps and AI integration — designed, built and launched by one person instead of an agency team.",
+		"End-to-end product builds, websites, mobile apps and AI integration. Designed, built and launched by one person instead of an agency team.",
 	path: "/services",
 	tag: "Services",
 	ogTitle: "Hire the whole team, as one person",
@@ -39,7 +39,7 @@ export default function Services() {
 						</h1>
 						<p className="hm-lede">
 							Design, web, mobile and backend are four hires at an agency and four
-							invoices on your side. Here they&apos;re one conversation — which is
+							invoices on your side. Here they&apos;re one conversation, which is
 							why things ship in weeks rather than quarters.
 						</p>
 						<div className="hm-actions">
@@ -132,7 +132,7 @@ export default function Services() {
 						Not sure which of these <span className="hm-accent">you need</span>?
 					</>
 				}
-				body="Describe the product in a couple of sentences. I'll tell you what it actually takes to launch it — and if it's outside what I should be doing, I'll say that too."
+				body="Describe the product in a couple of sentences. I'll tell you what it actually takes to launch it, and if it's outside what I should be doing, I'll say that too."
 				secondary={{ label: "See the work", href: "/work" }}
 			/>
 		</Layout>

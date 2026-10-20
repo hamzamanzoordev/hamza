@@ -43,18 +43,18 @@ export const MAINTENANCE = {
 	priceValue: 300,
 	billing: "per month",
 	details:
-		"A site is a thing you own, not a thing you buy once. This keeps it patched, backed up, fast and current — and gives you somewhere to send changes without a new quote every time.",
+		"A site is a thing you own, not a thing you buy once. This keeps it patched, backed up, fast and current, and gives you somewhere to send changes without a new quote every time.",
 	features: [
 		"Hosting, domain and SSL renewals managed",
 		"Dependency and security updates applied monthly",
-		"Uptime monitoring — I find out before you do",
+		"Uptime monitoring, so I find out before you do",
 		"Weekly offsite backups, restored on request",
 		"Up to 4 hours of content or design changes a month",
 		"Monthly Core Web Vitals and Search Console check",
 		"Priority reply, same working day",
 	],
 	/** Stated plainly because the objection to any retainer is lock-in. */
-	terms: "Optional on every tier. Month to month — cancel any time, no notice period.",
+	terms: "Optional on every tier. Month to month. Cancel any time, no notice period.",
 } as const
 
 export const plans: Plan[] = [
@@ -66,7 +66,7 @@ export const plans: Plan[] = [
 		billing: "one-time",
 		timeline: "1–2 weeks",
 		details:
-			"A five-page responsive site on Next.js, built the way this one was — real technical SEO, real Core Web Vitals, a contact form that actually delivers. Not a template with your logo dropped in.",
+			"A five-page responsive site on Next.js, built the way this one was: real technical SEO, real Core Web Vitals, a contact form that actually delivers. Not a template with your logo dropped in.",
 		features: [
 			"Up to 5 pages (Home, About, Services, Contact, Blog)",
 			"Free domain name for 1 year",
@@ -106,7 +106,7 @@ export const plans: Plan[] = [
 		billing: "one-time",
 		timeline: "3–5 weeks",
 		details:
-			"A complete store — catalogue, secure checkout, multiple payment gateways, and an admin panel for orders, stock and customers. The unglamorous half is the half that decides whether you can actually run it.",
+			"A complete store: catalogue, secure checkout, multiple payment gateways, and an admin panel for orders, stock and customers. The unglamorous half is the half that decides whether you can actually run it.",
 		features: [
 			"Unlimited products and categories",
 			"Free domain + business hosting (1 year)",
@@ -126,7 +126,7 @@ export const plans: Plan[] = [
 		billing: "project-based",
 		timeline: "6 weeks+",
 		details:
-			"Built around your business logic rather than a template — dashboards, booking systems, CRMs or a SaaS product. Scoped and quoted after a free call, and the number you get is the number you pay.",
+			"Built around your business logic rather than a template: dashboards, booking systems, CRMs or a SaaS product. Scoped and quoted after a free call, and the number you get is the number you pay.",
 		features: [
 			"Custom UI/UX design from scratch",
 			"Authentication and role management",

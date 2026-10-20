@@ -99,10 +99,10 @@ function serviceNode() {
 	return {
 		"@type": "ProfessionalService",
 		"@id": ID.service,
-		name: `${SITE.name} — Web & App Development`,
+		name: `${SITE.name} | Web & App Development`,
 		url: SITE.url,
 		description:
-			"End-to-end product builds — design, web app, mobile app and backend delivered by one person, from scope through launch.",
+			"End-to-end product builds: design, web app, mobile app and backend delivered by one person, from scope through launch.",
 		provider: { "@id": ID.person },
 		founder: { "@id": ID.person },
 		image: absoluteUrl("/assets/imgs/hero/hero-1/profile.png"),
@@ -255,7 +255,7 @@ export function ServicesJsonLd() {
 						url: absoluteUrl("/services"),
 						name: "Services",
 						description:
-							"End-to-end product builds, websites, mobile apps and AI integration — designed, built and launched by one person.",
+							"End-to-end product builds, websites, mobile apps and AI integration. Designed, built and launched by one person.",
 						isPartOf: { "@id": ID.website },
 						about: { "@id": ID.service },
 						inLanguage: "en",

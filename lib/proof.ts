@@ -17,7 +17,7 @@ export const POSITIONING = {
 	/** The one-line promise. Used in the hero and the OG image. */
 	promise: "One person. Design, web, mobile, backend. Launched.",
 	/** Short form for nav/meta contexts. */
-	role: "Product engineer — ships end-to-end",
+	role: "Product engineer who ships end-to-end",
 	/** The buyer this site is written for. */
 	audience:
 		"Founders and small teams who need a product built and launched, not a team assembled.",
@@ -48,7 +48,7 @@ export const METRICS: Metric[] = [
 	{
 		value: PROJECTS_DELIVERED,
 		label: "Projects delivered",
-		source: "Hamza's own count across all client work — update here when it changes",
+		source: "Hamza's own count across all client work. Update here when it changes",
 	},
 	{
 		value: `${projects.length}`,
@@ -63,7 +63,7 @@ export const METRICS: Metric[] = [
 	{
 		value: "4+",
 		label: "Years shipping",
-		source: "Stated experience — update in lib/proof.ts when this changes",
+		source: "Stated experience. Update in lib/proof.ts when this changes",
 	},
 ]
 
@@ -140,7 +140,7 @@ export interface ProcessStep {
 export const PROCESS: ProcessStep[] = [
 	{
 		title: "We scope it down to what ships",
-		body: "One call to find the smallest version of your product that's still worth launching. Most briefs arrive twice as large as they need to be — cutting that is the highest-value hour of the project.",
+		body: "One call to find the smallest version of your product that's still worth launching. Most briefs arrive twice as large as they need to be, and cutting that is the highest-value hour of the project.",
 	},
 	{
 		title: "I design and build it, in public",
@@ -148,7 +148,7 @@ export const PROCESS: ProcessStep[] = [
 	},
 	{
 		title: "It goes live, and I stay on for the tail",
-		body: "Launch is where most freelance engagements end and most problems start. App Store review, DNS, analytics, the first bug reports — that's part of the build, not a change request.",
+		body: "Launch is where most freelance engagements end and most problems start. App Store review, DNS, analytics, the first bug reports: that's part of the build, not a change request.",
 	},
 ]
 
@@ -164,7 +164,7 @@ export interface Faq {
 export const FAQS: Faq[] = [
 	{
 		q: "Why one person instead of an agency?",
-		a: "An agency puts a designer, a frontend dev, a backend dev, and a project manager between you and the product — and most of your budget goes to the coordination between them. I do all four roles, so the design decisions and the build decisions get made by the same person on the same day. For a product under roughly six months of work, that's faster and cheaper. Past that, you should hire a team, and I'll tell you so.",
+		a: "An agency puts a designer, a frontend dev, a backend dev, and a project manager between you and the product, and most of your budget goes to the coordination between them. I do all four roles, so the design decisions and the build decisions get made by the same person on the same day. For a product under roughly six months of work, that's faster and cheaper. Past that, you should hire a team, and I'll tell you so.",
 	},
 	{
 		q: "What if I need mobile and web?",
@@ -172,19 +172,19 @@ export const FAQS: Faq[] = [
 	},
 	{
 		q: "How do I know you'll actually finish?",
-		a: "Every project in the portfolio with a link next to it is live right now — you can open it and use it. That's the check I'd want too. The unlinked ones are client-internal and I can walk you through them on a call.",
+		a: "Every project in the portfolio with a link next to it is live right now. You can open it and use it. That's the check I'd want too. The unlinked ones are client-internal and I can walk you through them on a call.",
 	},
 	{
 		q: "What do you need from me to start?",
-		a: "A clear idea of who the product is for, any brand assets you already have, and about an hour a week. I don't need a spec document — writing one is usually part of the first week's work.",
+		a: "A clear idea of who the product is for, any brand assets you already have, and about an hour a week. I don't need a spec document, because writing one is usually part of the first week's work.",
 	},
 	{
 		q: "What does it cost?",
-		a: "Fixed-price website builds start at $499 and are listed on the Plans page. Full product builds — anything with accounts, payments, or a mobile app — are quoted per project after the scoping call, and typically land between $4,000 and $20,000 depending on how much ships in v1. You get that number after one call, not three.",
+		a: "Fixed-price website builds start at $499 and are listed on the Plans page. Full product builds (anything with accounts, payments, or a mobile app) are quoted per project after the scoping call, and typically land between $4,000 and $20,000 depending on how much ships in v1. You get that number after one call, not three.",
 	},
 	{
 		q: "Do you offer ongoing maintenance after launch?",
-		a: "Yes — the Care Plan is $300 a month and it's optional on every tier. It covers hosting, domain and SSL renewals, monthly security and dependency updates, uptime monitoring, weekly offsite backups, a monthly Core Web Vitals and Search Console check, and up to four hours of content or design changes. It's month to month, so you can cancel any time. Plenty of clients don't take it and just email me when something needs doing — that's fine too, it's billed hourly instead.",
+		a: "Yes. The Care Plan is $300 a month and it's optional on every tier. It covers hosting, domain and SSL renewals, monthly security and dependency updates, uptime monitoring, weekly offsite backups, a monthly Core Web Vitals and Search Console check, and up to four hours of content or design changes. It's month to month, so you can cancel any time. Plenty of clients don't take it and just email me when something needs doing, and that's fine too, it's billed hourly instead.",
 	},
 	{
 		q: "Do you work with existing codebases?",
