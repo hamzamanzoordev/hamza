@@ -29,7 +29,7 @@ export default function ThemeSwitch() {
 			onClick={toggleTheme}
 			style={{ cursor: "pointer" }}
 		>
-			<i className={`bi theme-icon ${theme === "light" ? "ri-sun-line text-warning" : "ri-contrast-2-line text-white"}`} />
+			<i className={`bi theme-icon ${theme === "light" ? "ri-sun-line" : "ri-moon-line"}`} />
 		</div>
 	)
 }
