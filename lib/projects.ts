@@ -54,7 +54,7 @@ export const projects: Project[] = [
 		gallery: [1, 2, 3, 4, 5, 6, 42, 43, 44, 45, 46],
 		featured: true,
 		description:
-			"A playful iOS memory game with face-flip quizzes, quiz battles and daily challenges — from the app UI to the full marketing website.",
+			"A playful iOS memory game with face-flip quizzes, quiz battles and daily challenges, from the app UI to the full marketing website.",
 	},
 	{
 		slug: "glazeme",
@@ -80,7 +80,7 @@ export const projects: Project[] = [
 		gallery: [12, 13, 14, 15, 16, 53, 54, 55, 56, 57, 58],
 		featured: true,
 		description:
-			"Pakistan's verified B2B textile marketplace — audited sellers, secure escrow payments and in-app deal chat across mobile apps and web.",
+			"Pakistan's verified B2B textile marketplace with audited sellers, secure escrow payments and in-app deal chat across mobile apps and web.",
 	},
 	{
 		slug: "food-order-app",
@@ -171,7 +171,7 @@ export const projects: Project[] = [
 		gallery: [59, 60, 61, 62, 63, 64, 65, 73],
 		featured: true,
 		description:
-			"A property-development brand site — from concept to conversion — showcasing homes and communities.",
+			"A property-development brand site, from concept to conversion, showcasing homes and communities.",
 	},
 	{
 		slug: "zynhive",
@@ -182,7 +182,7 @@ export const projects: Project[] = [
 		url: "https://zynhive.com",
 		cover: 66,
 		gallery: [66, 67, 68, 69, 70, 71, 72],
-		description: "Clean code, smart design, real results — a modern software agency website.",
+		description: "Clean code, smart design, real results: a modern software agency website.",
 	},
 	{
 		slug: "brightfunded",

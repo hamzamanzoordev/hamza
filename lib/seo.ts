@@ -10,9 +10,9 @@ export const SITE = {
 	name: "Hamza Manzoor",
 	shortName: "Hamza",
 	brand: "Hamza Manzoor",
-	title: "Hamza Manzoor — Product Engineer: design, web, mobile, launched",
+	title: "Hamza Manzoor | Product Engineer: design, web, mobile, launched",
 	description:
-		"I design, build and launch products end-to-end — web, mobile and backend — so founders don't have to assemble a team. Marketplaces, fintech and App Store apps.",
+		"I design, build and launch products end-to-end (web, mobile and backend) so founders don't have to assemble a team. Marketplaces, fintech and App Store apps.",
 	url: (process.env.NEXT_PUBLIC_SITE_URL || "https://hamzamanzoor.online").replace(/\/$/, ""),
 	locale: "en_US",
 	/**
@@ -145,7 +145,7 @@ export function pageMetadata(input: PageMetaInput): Metadata {
 					url: image,
 					width: 1200,
 					height: 630,
-					alt: `${title} — ${SITE.brand}`,
+					alt: `${title} | ${SITE.brand}`,
 				},
 			],
 		},

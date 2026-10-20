@@ -22,7 +22,7 @@ export const services: Service[] = [
 		slug: "product-builds",
 		title: "End-to-end product builds",
 		outcome: "An idea becomes something people can sign up for.",
-		body: "The full job: interface design, web app, mobile app, backend, payments, and the launch itself. This is the work I'm actually for — you describe the product, and one person builds all of it rather than four people building a quarter each.",
+		body: "The full job: interface design, web app, mobile app, backend, payments, and the launch itself. This is the work I'm actually for: you describe the product, and one person builds all of it rather than four people building a quarter each.",
 		delivers: [
 			"Product and UI design from scratch",
 			"Web app in React / Next.js",
@@ -40,7 +40,7 @@ export const services: Service[] = [
 		body: "Marketing sites, portfolios, and company sites where performance and search visibility are part of the build rather than a phase afterwards. Fixed-price tiers are on the Plans page, so you know the number before we talk.",
 		delivers: [
 			"Next.js or WordPress, chosen by who maintains it after",
-			"Technical SEO built in — schema, sitemaps, OG images",
+			"Technical SEO built in: schema, sitemaps, OG images",
 			"Real Core Web Vitals, not a Lighthouse screenshot",
 			"CMS setup so you can edit without calling me",
 		],
@@ -50,7 +50,7 @@ export const services: Service[] = [
 	{
 		slug: "mobile-apps",
 		title: "Mobile apps, shipped to the store",
-		outcome: "Your app is in the App Store — not in review limbo.",
+		outcome: "Your app is in the App Store, not in review limbo.",
 		body: "Native SwiftUI where the platform matters and Flutter or React Native where reach matters. Getting an app built is the easy half; getting it through review and out to users is where most projects stall, so that's included.",
 		delivers: [
 			"SwiftUI, Flutter, or React Native",
@@ -65,7 +65,7 @@ export const services: Service[] = [
 		slug: "ai-integration",
 		title: "AI that earns its place",
 		outcome: "A feature that works, not a demo that impresses.",
-		body: "Bringing language models and vision into products where they genuinely improve the thing — generation, classification, conversational support — and being honest with you when a simpler solution would do the job better and cheaper.",
+		body: "Bringing language models and vision into products where they genuinely improve the thing (generation, classification, conversational support), and being honest with you when a simpler solution would do the job better and cheaper.",
 		delivers: [
 			"LLM features inside real product flows",
 			"Conversational agents on web and WhatsApp",
@@ -87,7 +87,7 @@ export const pillars = [
 	{
 		icon: "ri-stack-line",
 		title: "Web and mobile from one plan",
-		body: "Most products need both. Deciding that up front — instead of bolting mobile on later — is where the real time and money get saved.",
+		body: "Most products need both. Deciding that up front, instead of bolting mobile on later, is where the real time and money get saved.",
 	},
 	{
 		icon: "ri-flight-takeoff-line",

@@ -17,7 +17,7 @@ export default function ClosingCTA({
 			Have something that needs <span className="hm-accent">building and launching</span>?
 		</>
 	),
-	body = "Tell me what you're making and who it's for. I'll tell you the smallest version worth shipping — and what it costs.",
+	body = "Tell me what you're making and who it's for. I'll tell you the smallest version worth shipping, and what it costs.",
 	primary = { label: "Book a Call", href: "/#contact" },
 	secondary = { label: "See the work", href: "/work" },
 }: Props) {

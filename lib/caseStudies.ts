@@ -77,18 +77,18 @@ export const caseStudies: CaseStudy[] = [
 		year: "2024",
 		title: "A verified B2B textile marketplace, built across three platforms",
 		summary:
-			"MadeInPK connects Pakistani textile mills with international buyers who have no reliable way to tell a real supplier from a fraudulent one. Apps, web, escrow and admin tooling — designed and built end-to-end.",
+			"MadeInPK connects Pakistani textile mills with international buyers who have no reliable way to tell a real supplier from a fraudulent one. Apps, web, escrow and admin tooling, designed and built end-to-end.",
 		role: ["Product design", "iOS & Android", "Web app", "Backend & APIs"],
 		stack: ["React Native", "Next.js", "Node.js", "PostgreSQL", "Stripe"],
 		platforms: ["iOS", "Android", "Web"],
 		context:
 			"Pakistan's textile industry is one of the largest in the world, and almost none of it is reachable online in a way an overseas buyer can act on. Mills advertise on WhatsApp and directory sites with no verification layer. Buyers arrive wanting to place real orders and find no way to distinguish a thirty-year-old family mill from an account created last week.",
 		challenge:
-			"Cross-border trade runs on trust that does not exist between strangers. A buyer has no way to confirm the mill they are about to wire money to is a registered business; a genuine mill has no way to prove it is. The result is that deals die at exactly the moment money is supposed to move — which means the marketplace does not have a discovery problem, it has a settlement problem. Build the beautiful catalogue and it still fails at the last step.",
+			"Cross-border trade runs on trust that does not exist between strangers. A buyer has no way to confirm the mill they are about to wire money to is a registered business; a genuine mill has no way to prove it is. The result is that deals die at exactly the moment money is supposed to move, which means the marketplace does not have a discovery problem, it has a settlement problem. Build the beautiful catalogue and it still fails at the last step.",
 		constraints: [
 			"Neither side of the transaction trusts the other, and the platform starts with no reputation of its own to lend them",
 			"Buyers are often in different time zones and currencies from sellers",
-			"Sellers are frequently mobile-only; buyers are frequently desk-based — so neither web-first nor app-first was sufficient",
+			"Sellers are frequently mobile-only; buyers are frequently desk-based, so neither web-first nor app-first was sufficient",
 			"Fraud has to be designed out structurally, not moderated away after the fact",
 		],
 		decisions: [
@@ -122,15 +122,15 @@ export const caseStudies: CaseStudy[] = [
 		sections: [
 			{
 				heading: "Cutting v1 down to what actually unblocks a deal",
-				body: "The initial brief was a full trading platform — logistics, analytics, ratings, financing. Reduced to first principles, only two things stop a deal from happening: the buyer cannot confirm who the seller is, and neither party will move money first. Everything else is optimisation on top of a transaction that is not occurring yet. v1 shipped those two, and the deferred features became a roadmap rather than a delay.",
+				body: "The initial brief was a full trading platform: logistics, analytics, ratings, financing. Reduced to first principles, only two things stop a deal from happening: the buyer cannot confirm who the seller is, and neither party will move money first. Everything else is optimisation on top of a transaction that is not occurring yet. v1 shipped those two, and the deferred features became a roadmap rather than a delay.",
 			},
 			{
 				heading: "Why the verified badge had to be expensive to earn",
-				body: "Trust markers only work if they are costly to obtain. A badge granted for uploading a document is granted to anyone willing to upload a document, including the people it is meant to filter out. Tying it to CNIC and business registration is slower and loses some sellers at the gate — which is precisely the mechanism that makes it worth something to a buyer.",
+				body: "Trust markers only work if they are costly to obtain. A badge granted for uploading a document is granted to anyone willing to upload a document, including the people it is meant to filter out. Tying it to CNIC and business registration is slower and loses some sellers at the gate, which is precisely the mechanism that makes it worth something to a buyer.",
 			},
 			{
 				heading: "What three platforms actually cost",
-				body: "This is the project that best demonstrates the argument the rest of this site makes. An agency would have staffed a mobile team and a web team, and the escrow flow — the part where correctness matters most — would have been specified in a document, interpreted twice, and reconciled in QA. Here it was designed once and consumed three times. The savings were not in typing; they were in not having to make the same decision three times and then make the three answers agree.",
+				body: "This is the project that best demonstrates the argument the rest of this site makes. An agency would have staffed a mobile team and a web team, and the escrow flow (the part where correctness matters most) would have been specified in a document, interpreted twice, and reconciled in QA. Here it was designed once and consumed three times. The savings were not in typing; they were in not having to make the same decision three times and then make the three answers agree.",
 			},
 		],
 		phases: [
@@ -152,7 +152,7 @@ export const caseStudies: CaseStudy[] = [
 			{
 				label: "Launch",
 				title: "Stores, onboarding and the first real deals",
-				body: "App Store and Play Store submission, seller onboarding, and monitoring the first live escrow transactions — the only test that counts for a payments flow.",
+				body: "App Store and Play Store submission, seller onboarding, and monitoring the first live escrow transactions: the only test that counts for a payments flow.",
 			},
 		],
 		shipped: [
@@ -182,13 +182,13 @@ export const caseStudies: CaseStudy[] = [
 		stack: ["SwiftUI", "OpenAI API", "Stripe", "Node.js"],
 		platforms: ["iOS", "Web"],
 		context:
-			"Two categories that both stall for opposite reasons. Gifting apps stall because writing the message is work, and an empty text field at the moment of sending is where people abandon. Compliment apps stall because a compliment that costs nothing signals nothing — the sentiment is free, so it reads as free.",
+			"Two categories that both stall for opposite reasons. Gifting apps stall because writing the message is work, and an empty text field at the moment of sending is where people abandon. Compliment apps stall because a compliment that costs nothing signals nothing: the sentiment is free, so it reads as free.",
 		challenge:
 			"GlazeMe's bet is that each category fixes the other's failure: the AI removes the writing effort, and the money makes the message mean something. That is a clean product thesis and a demanding build, because it puts a language model directly in the path of a payment. Every second of generation latency and every piece of generic output sits between a user and a transaction.",
 		constraints: [
 			"A model sitting inside a payment flow makes latency a conversion problem, not just a technical one",
 			"Generic AI output reads as spam and destroys the sincerity the product depends on",
-			"Money movement has to be correct on the first attempt — trust in a wallet is lost permanently, not temporarily",
+			"Money movement has to be correct on the first attempt, because trust in a wallet is lost permanently, not temporarily",
 			"The entire send interaction has to complete in under a minute or the impulse is gone",
 		],
 		decisions: [
@@ -196,7 +196,7 @@ export const caseStudies: CaseStudy[] = [
 				decision: "The model drafts; the person always edits before sending",
 				why: "Fully automated compliments are indistinguishable from spam, and the sender needs to feel authorship for the gesture to carry meaning. Editing is what converts generated text into something the sender is willing to put money behind.",
 				tradeoff:
-					"An extra step in a flow being optimised for speed. Worth it — removing it would have made the output feel machine-sent, which is fatal to the premise.",
+					"An extra step in a flow being optimised for speed. Worth it: removing it would have made the output feel machine-sent, which is fatal to the premise.",
 			},
 			{
 				decision: "Condition generation on recipient context and the sender's own framing",
@@ -218,15 +218,15 @@ export const caseStudies: CaseStudy[] = [
 			},
 		],
 		architecture:
-			"SwiftUI on the front, a Node service in the middle owning both the generation path and the ledger. Generation is conditioned server-side so prompt logic can change without an App Store release. The wallet is a double-entry ledger rather than a balance column — top-ups, sends, receipts and withdrawals are all entries, so a balance is always derived and can always be explained. Stripe handles the money rails in and out; the ledger is the source of truth for everything in between.",
+			"SwiftUI on the front, a Node service in the middle owning both the generation path and the ledger. Generation is conditioned server-side so prompt logic can change without an App Store release. The wallet is a double-entry ledger rather than a balance column. Top-ups, sends, receipts and withdrawals are all entries, so a balance is always derived and can always be explained. Stripe handles the money rails in and out; the ledger is the source of truth for everything in between.",
 		sections: [
 			{
 				heading: "Making the AI earn its place",
-				body: "A compliment generator is easy to demo and hard to ship. The demo version produces something charming once; the shipped version has to avoid producing something hollow on the fiftieth send. The answer was to stop treating generation as the product and start treating it as a draft — conditioned on real context, always edited, never sent unread. The model removes the blank page, which was the actual barrier. It does not pretend to be the sender.",
+				body: "A compliment generator is easy to demo and hard to ship. The demo version produces something charming once; the shipped version has to avoid producing something hollow on the fiftieth send. The answer was to stop treating generation as the product and start treating it as a draft, conditioned on real context, always edited, never sent unread. The model removes the blank page, which was the actual barrier. It does not pretend to be the sender.",
 			},
 			{
 				heading: "The invisible half is the hard half",
-				body: "Most of the engineering is the wallet, and almost none of the marketing is. Balances that are always correct, sends that cannot double-spend, withdrawals that reconcile — this is the layer that determines whether a user trusts the app after their first transaction. It got the most care precisely because it is the part nobody notices when it works.",
+				body: "Most of the engineering is the wallet, and almost none of the marketing is. Balances that are always correct, sends that cannot double-spend, withdrawals that reconcile: this is the layer that determines whether a user trusts the app after their first transaction. It got the most care precisely because it is the part nobody notices when it works.",
 			},
 			{
 				heading: "Designing for under a minute",
@@ -252,7 +252,7 @@ export const caseStudies: CaseStudy[] = [
 			{
 				label: "Launch",
 				title: "Review, listing and the marketing site",
-				body: "App Store submission — a payments-plus-AI app draws more review scrutiny than most — plus the companion site.",
+				body: "App Store submission (a payments-plus-AI app draws more review scrutiny than most), plus the companion site.",
 			},
 		],
 		shipped: [
@@ -265,7 +265,7 @@ export const caseStudies: CaseStudy[] = [
 			"Companion marketing website",
 		],
 		reflection:
-			"Generation cost per send should have been instrumented from the first build rather than estimated. In an app where every send triggers a model call and only some sends carry money, unit economics are a product constraint — and I was measuring latency long before I was measuring cost per completed transaction.",
+			"Generation cost per send should have been instrumented from the first build rather than estimated. In an app where every send triggers a model call and only some sends carry money, unit economics are a product constraint, and I was measuring latency long before I was measuring cost per completed transaction.",
 		gallery: [7, 8, 9, 10, 11, 47, 48, 49, 50, 51, 52],
 	},
 
@@ -282,11 +282,11 @@ export const caseStudies: CaseStudy[] = [
 		stack: ["SwiftUI", "Game Center", "Node.js"],
 		platforms: ["iOS", "Web"],
 		context:
-			"Casual quiz games are cheap to build and brutal to retain. The mechanic is rarely the problem — most of them are perfectly fun the first time. What is missing is a reason to open the app on day three, when the novelty is gone and nothing about the game has changed since yesterday.",
+			"Casual quiz games are cheap to build and brutal to retain. The mechanic is rarely the problem. Most of them are perfectly fun the first time. What is missing is a reason to open the app on day three, when the novelty is gone and nothing about the game has changed since yesterday.",
 		challenge:
-			"Design a loop where something is different tomorrow. That is a content problem, a social problem and a difficulty-curve problem simultaneously, and solving only one of them still produces a game people stop playing — just slightly later.",
+			"Design a loop where something is different tomorrow. That is a content problem, a social problem and a difficulty-curve problem simultaneously, and solving only one of them still produces a game people stop playing, just slightly later.",
 		constraints: [
-			"A session has to be genuinely short — two minutes, not 'about five'",
+			"A session has to be genuinely short: two minutes, not 'about five'",
 			"Difficulty must rise with the player or the game becomes trivial exactly as they start caring",
 			"No content team, so freshness has to come from structure rather than a production pipeline",
 			"Animation and timing feel is the entire product; there is nowhere for roughness to hide",
@@ -318,11 +318,11 @@ export const caseStudies: CaseStudy[] = [
 			},
 		],
 		architecture:
-			"SwiftUI throughout, with a light Node backend for battles, daily challenge state and scoring. The daily challenge is generated server-side so it can change without shipping an app update, which is what allows freshness without a content pipeline. Game Center carries identity and leaderboards rather than a bespoke account system — an unnecessary sign-up screen is a retention cost in a casual game.",
+			"SwiftUI throughout, with a light Node backend for battles, daily challenge state and scoring. The daily challenge is generated server-side so it can change without shipping an app update, which is what allows freshness without a content pipeline. Game Center carries identity and leaderboards rather than a bespoke account system, because an unnecessary sign-up screen is a retention cost in a casual game.",
 		sections: [
 			{
 				heading: "Designing against the day-three cliff",
-				body: "Install is not the hard part; the third session is. Three mechanics carry the return: a daily challenge that resets, quiz battles that put a real person on the other side, and face-flip rounds that get harder as you improve. None is novel on its own — the work was making the loop between them short enough that playing is a two-minute impulse rather than a decision.",
+				body: "Install is not the hard part; the third session is. Three mechanics carry the return: a daily challenge that resets, quiz battles that put a real person on the other side, and face-flip rounds that get harder as you improve. None is novel on its own. The work was making the loop between them short enough that playing is a two-minute impulse rather than a decision.",
 			},
 			{
 				heading: "Freshness without a content team",
@@ -347,7 +347,7 @@ export const caseStudies: CaseStudy[] = [
 			{
 				label: "Weeks 5–6",
 				title: "Feel and polish",
-				body: "Transitions, score feedback and animation timing tuned directly in SwiftUI — the pass that decides whether a casual game reads as cheap or not.",
+				body: "Transitions, score feedback and animation timing tuned directly in SwiftUI: the pass that decides whether a casual game reads as cheap or not.",
 			},
 			{
 				label: "Launch",
@@ -365,7 +365,7 @@ export const caseStudies: CaseStudy[] = [
 			"Full marketing website",
 		],
 		reflection:
-			"I built all three return mechanics before having any evidence about which one people would actually come back for. With hindsight I would have shipped the daily challenge alone, watched real behaviour, and let that decide whether battles were worth building — the same scope discipline I apply to client work, applied less rigorously to a project of my own.",
+			"I built all three return mechanics before having any evidence about which one people would actually come back for. With hindsight I would have shipped the daily challenge alone, watched real behaviour, and let that decide whether battles were worth building. That is the same scope discipline I apply to client work, applied less rigorously to a project of my own.",
 		gallery: [1, 2, 3, 4, 5, 6, 42, 43, 44, 45, 46],
 	},
 
@@ -382,7 +382,7 @@ export const caseStudies: CaseStudy[] = [
 		stack: ["Next.js", "Node.js", "PostgreSQL", "Video streaming", "Stripe"],
 		platforms: ["Web"],
 		context:
-			"Independent filmmakers have finished work and no distribution. Buyers — brands, agencies, producers — want independent work and have no efficient way to find it. Both sides exist; there is simply no venue where they can see each other.",
+			"Independent filmmakers have finished work and no distribution. Buyers (brands, agencies, producers) want independent work and have no efficient way to find it. Both sides exist; there is simply no venue where they can see each other.",
 		challenge:
 			"The cold-start problem in its purest form. Creators will not upload to a marketplace with no buyers, and buyers will not visit a marketplace with no work. Building both sides simultaneously and launching to an empty room is the standard way this fails.",
 		constraints: [
@@ -394,7 +394,7 @@ export const caseStudies: CaseStudy[] = [
 		decisions: [
 			{
 				decision: "Make the creator side worth using with zero buyers present",
-				why: "This is the answer to cold start. Upload, organise, present and share your work behind a real page is a portfolio — useful on day one, with no demand side required. Supply accumulates while the marketplace is still empty.",
+				why: "This is the answer to cold start. Upload, organise, present and share your work behind a real page is a portfolio, useful on day one, with no demand side required. Supply accumulates while the marketplace is still empty.",
 				tradeoff:
 					"Meaningful build effort spent on tools that generate no revenue directly, in service of the marketplace existing at all.",
 			},
@@ -406,7 +406,7 @@ export const caseStudies: CaseStudy[] = [
 			},
 			{
 				decision: "Give creators a shareable public page for every piece of work",
-				why: "It turns each creator into a distribution channel. They share their own page, which brings their audience to the platform — the least expensive demand generation available.",
+				why: "It turns each creator into a distribution channel. They share their own page, which brings their audience to the platform: the least expensive demand generation available.",
 				tradeoff:
 					"Public pages have to be fast and good-looking enough that a creator is willing to put their name on them, which raises the bar on the whole presentation layer.",
 			},
@@ -418,7 +418,7 @@ export const caseStudies: CaseStudy[] = [
 			},
 		],
 		architecture:
-			"Next.js with server rendering for public creator and work pages — these are the shareable, indexable acquisition surface, so they cannot be client-rendered. Node and PostgreSQL handle listings, transactions and payouts. Video is handled out of band: uploads go straight to storage, transcoding runs asynchronously, and delivery is separated from the application path so a large upload never blocks browsing. Stripe covers payments in and creator payouts out.",
+			"Next.js with server rendering for public creator and work pages. These are the shareable, indexable acquisition surface, so they cannot be client-rendered. Node and PostgreSQL handle listings, transactions and payouts. Video is handled out of band: uploads go straight to storage, transcoding runs asynchronously, and delivery is separated from the application path so a large upload never blocks browsing. Stripe covers payments in and creator payouts out.",
 		sections: [
 			{
 				heading: "Solving the empty room",
@@ -426,7 +426,7 @@ export const caseStudies: CaseStudy[] = [
 			},
 			{
 				heading: "Video is the part that decides everything else",
-				body: "Uploads are large, connections are unreliable, and playback quality determines whether anyone browses at all. This work is invisible when it succeeds and terminal when it fails, so it received attention out of proportion to its visibility — before there was any transaction volume to justify it.",
+				body: "Uploads are large, connections are unreliable, and playback quality determines whether anyone browses at all. This work is invisible when it succeeds and terminal when it fails, so it received attention out of proportion to its visibility, before there was any transaction volume to justify it.",
 			},
 			{
 				heading: "Writing for two audiences at once",
@@ -442,7 +442,7 @@ export const caseStudies: CaseStudy[] = [
 			{
 				label: "Weeks 4–7",
 				title: "The creator product",
-				body: "Upload, organisation, presentation and shareable public work pages — server-rendered, fast, and worth a creator's name.",
+				body: "Upload, organisation, presentation and shareable public work pages: server-rendered, fast, and worth a creator's name.",
 			},
 			{
 				label: "Weeks 8–11",

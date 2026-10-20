@@ -3,17 +3,17 @@ import SectionHead from "@/components/hm/SectionHead"
 
 const track = [
 	{
-		period: "2024 — now",
+		period: "2024 to now",
 		title: "Independent product engineer",
-		body: "Full products end-to-end for founders — B2B marketplaces, fintech platforms, and AI-integrated iOS apps. Also founded ZynHive.",
+		body: "Full products end-to-end for founders: B2B marketplaces, fintech platforms, and AI-integrated iOS apps. Also founded ZynHive.",
 	},
 	{
-		period: "2022 — 2024",
+		period: "2022 to 2024",
 		title: "Full-stack developer, freelance",
 		body: "Production websites and platforms for international clients across React/Node and WordPress, including UK property and e-commerce brands.",
 	},
 	{
-		period: "2020 — 2022",
+		period: "2020 to 2022",
 		title: "Web developer",
 		body: "Responsive sites for small businesses. Where the foundation in modern JavaScript frameworks got built.",
 	},
@@ -30,7 +30,7 @@ export default function Resume1() {
 							Four years of <span className="hm-accent">things going live</span>
 						</>
 					}
-					lede="The numbers below come straight from the project catalogue that powers this site — nothing is typed in by hand."
+					lede="The numbers below come straight from the project catalogue that powers this site. Nothing is typed in by hand."
 					action={{ label: "Download CV", href: "/assets/resume.pdf" }}
 				/>
 

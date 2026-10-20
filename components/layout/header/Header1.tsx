@@ -41,7 +41,7 @@ export default function Header1({ isMobileMenu, handleMobileMenu }: any) {
     <header className="hm-header">
       <div className="hm-nav">
         <div className="hm-nav__inner">
-          <Link href="/" className="hm-brand" aria-label="Hamza Manzoor — home">
+          <Link href="/" className="hm-brand" aria-label="Hamza Manzoor, home">
             <span className="hm-logo-mark" aria-hidden="true" />
             <span className="hm-brand__text">
               Hamza<span className="hm-brand__accent">Manzoor</span>

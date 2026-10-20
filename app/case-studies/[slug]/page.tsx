@@ -119,7 +119,7 @@ export default async function CaseStudyPage({
 			<section className="hm-section hm-section--tight hm-section--flush-t">
 				<div className="hm-wrap">
 					<div className="hm-cs-lead" data-reveal>
-						<img src={resolveImg(cs.gallery[0])} alt={`${cs.navLabel} — overview`} />
+						<img src={resolveImg(cs.gallery[0])} alt={`${cs.navLabel} overview`} />
 					</div>
 				</div>
 			</section>
@@ -320,7 +320,7 @@ export default async function CaseStudyPage({
 						Want something built <span className="hm-accent">like this</span>?
 					</>
 				}
-				body="Tell me what you're making and who it's for. I'll tell you the smallest version worth shipping — and what it costs."
+				body="Tell me what you're making and who it's for. I'll tell you the smallest version worth shipping, and what it costs."
 				secondary={{ label: "See all work", href: "/work" }}
 			/>
 		</Layout>
