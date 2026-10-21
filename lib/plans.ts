@@ -57,6 +57,40 @@ export const MAINTENANCE = {
 	terms: "Optional on every tier. Month to month. Cancel any time, no notice period.",
 } as const
 
+/**
+ * The hourly rate — for work too small or too open-ended for a fixed tier.
+ *
+ * ⚠️ The $50 is Hamza's number. The billing terms below (estimate first,
+ * 30-minute increments, a pause-and-ask before going over) are sensible
+ * defaults written to be edited; each one is a promise a real person keeps.
+ *
+ * Rendered on /website-plans, emitted as a per-hour Offer in the plans schema,
+ * and listed in /llms.txt — all from here.
+ */
+export const HOURLY = {
+	name: "Hourly work",
+	tagline: "Fixes, features and second opinions",
+	price: "$50",
+	priceValue: 50,
+	billing: "per hour",
+	details:
+		"Not every job needs a package. If you have a bug, a feature to add to a site you already own, or a codebase you want looked at, you pay for the hours it takes and nothing else.",
+	goodFor: [
+		"Bug fixes and broken layouts",
+		"New features on an existing site or app",
+		"Speed, SEO and Core Web Vitals fixes",
+		"Code review and technical audits",
+		"Picking up a project another developer left",
+		"Consulting calls on stack, scope or hiring",
+	],
+	steps: [
+		{ title: "You describe it", body: "Send the problem in a message. A screenshot or a link is usually enough." },
+		{ title: "I estimate it", body: "You get an hour range in writing before any time is billed." },
+		{ title: "I fix it", body: "Tracked in 30-minute increments. If it runs over the range, I stop and ask first." },
+	],
+	terms: "No minimum hours, no retainer. Invoiced when the work is done.",
+} as const
+
 export const plans: Plan[] = [
 	{
 		projectName: "Starter Business Site",

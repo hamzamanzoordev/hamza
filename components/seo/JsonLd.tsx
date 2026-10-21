@@ -1,7 +1,7 @@
 import { SITE, absoluteUrl } from "@/lib/seo"
 import { FAQS, CONTACT, PROJECTS_DELIVERED, liveProjects } from "@/lib/proof"
 import { services } from "@/lib/services"
-import { plans, CUSTOM_BUILD_RANGE, MAINTENANCE } from "@/lib/plans"
+import { plans, CUSTOM_BUILD_RANGE, MAINTENANCE, HOURLY } from "@/lib/plans"
 import { projects, projectImg, categoryLabel } from "@/lib/projects"
 
 /**
@@ -410,6 +410,37 @@ export function PlansJsonLd() {
 		eligibleCustomerType: MAINTENANCE.tagline,
 	}
 
+	/** Hourly work: the same UnitPriceSpecification shape, per HUR. */
+	const hourlyOffer: Record<string, unknown> = {
+		"@type": "Offer",
+		"@id": `${SITE.url}/website-plans#hourly`,
+		position: plans.length + 2,
+		name: HOURLY.name,
+		description: HOURLY.details,
+		priceCurrency: "USD",
+		priceSpecification: {
+			"@type": "UnitPriceSpecification",
+			price: HOURLY.priceValue,
+			priceCurrency: "USD",
+			unitCode: "HUR",
+			referenceQuantity: {
+				"@type": "QuantitativeValue",
+				value: 1,
+				unitCode: "HUR",
+			},
+		},
+		availability: "https://schema.org/InStock",
+		seller: { "@id": ID.person },
+		itemOffered: {
+			"@type": "Service",
+			name: HOURLY.name,
+			description: HOURLY.details,
+			serviceType: "Web Development",
+			provider: { "@id": ID.person },
+		},
+		eligibleCustomerType: HOURLY.tagline,
+	}
+
 	return (
 		<JsonLd
 			data={{
@@ -420,7 +451,7 @@ export function PlansJsonLd() {
 						"@id": `${SITE.url}/website-plans#webpage`,
 						url: absoluteUrl("/website-plans"),
 						name: "Website Plans & Pricing",
-						description: `Fixed-price website packages from $${plans[0].priceValue}, with scope, timeline and cost stated up front. Optional ${MAINTENANCE.name} at $${MAINTENANCE.priceValue}/month.`,
+						description: `Fixed-price website packages from $${plans[0].priceValue}, with scope, timeline and cost stated up front. Optional ${MAINTENANCE.name} at $${MAINTENANCE.priceValue}/month, or $${HOURLY.priceValue}/hour for smaller jobs.`,
 						isPartOf: { "@id": ID.website },
 						inLanguage: "en",
 					},
@@ -430,8 +461,8 @@ export function PlansJsonLd() {
 						name: "Website packages",
 						url: absoluteUrl("/website-plans"),
 						provider: { "@id": ID.person },
-						numberOfItems: tierOffers.length + 1,
-						itemListElement: [...tierOffers, careOffer],
+						numberOfItems: tierOffers.length + 2,
+						itemListElement: [...tierOffers, careOffer, hourlyOffer],
 					},
 				],
 			}}

@@ -9,7 +9,7 @@ import {
 	PROCESS,
 } from "@/lib/proof"
 import { services } from "@/lib/services"
-import { plans, CUSTOM_BUILD_RANGE, MAINTENANCE } from "@/lib/plans"
+import { plans, CUSTOM_BUILD_RANGE, MAINTENANCE, HOURLY } from "@/lib/plans"
 import { projects } from "@/lib/projects"
 import { caseStudies } from "@/lib/caseStudies"
 
@@ -103,6 +103,12 @@ function build(): string {
 		`**${MAINTENANCE.name}: ${MAINTENANCE.price} ${MAINTENANCE.billing}.**` +
 			` ${MAINTENANCE.details} Includes:` +
 			` ${MAINTENANCE.features.join("; ")}. ${MAINTENANCE.terms}`,
+		"",
+	)
+	push(
+		`**${HOURLY.name}: ${HOURLY.price} ${HOURLY.billing}.** ${HOURLY.details}` +
+			` Good for: ${HOURLY.goodFor.join("; ")}.` +
+			` ${HOURLY.steps.map((s) => `${s.title}: ${s.body}`).join(" ")} ${HOURLY.terms}`,
 		"",
 	)
 	push(

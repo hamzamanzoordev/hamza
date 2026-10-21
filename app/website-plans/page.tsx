@@ -1,7 +1,7 @@
 import Layout from "@/components/layout/Layout"
 import Link from "next/link"
 import { pageMetadata } from "@/lib/seo"
-import { plans, MAINTENANCE } from "@/lib/plans"
+import { plans, MAINTENANCE, HOURLY } from "@/lib/plans"
 import SectionHead from "@/components/hm/SectionHead"
 import FaqList from "@/components/hm/FaqList"
 import Testimonials from "@/components/hm/Testimonials"
@@ -11,7 +11,7 @@ import { PlansJsonLd, BreadcrumbJsonLd } from "@/components/seo/JsonLd"
 export const metadata = pageMetadata({
 	title: "Website Plans & Pricing",
 	description:
-		"Fixed-price website packages from $499. Scope, timeline and cost stated up front. Business sites, portfolios, stores and custom web apps.",
+		"Fixed-price website packages from $499, or $50 an hour for smaller jobs. Scope, timeline and cost stated up front. Business sites, portfolios, stores and custom web apps.",
 	path: "/website-plans",
 	tag: "Pricing",
 	ogTitle: "The price is on the page",
@@ -34,7 +34,8 @@ export default function WebsitePlans() {
 							Most developers make you book a call to find out what anything costs.
 							These four tiers cover the majority of website work, with scope and
 							timeline stated up front, plus a monthly care plan if you want me to
-							keep it running. Product builds are quoted per project.
+							keep it running. Smaller jobs are $50 an hour, and product builds are
+							quoted per project.
 						</p>
 					</div>
 				</div>
@@ -118,6 +119,52 @@ export default function WebsitePlans() {
 							</Link>
 						</div>
 					</div>
+				</div>
+			</section>
+
+			{/* Hourly. Its own section rather than another panel in the grid
+			    above: everything there is a package, this is the opposite. */}
+			<section className="hm-section" id="hourly">
+				<div className="hm-wrap">
+					<div className="hm-rate" data-reveal>
+						<div className="hm-rate__head">
+							<span className="hm-eyebrow">Smaller jobs</span>
+							<h2 className="hm-h2">
+								Or just pay <span className="hm-accent">by the hour</span>
+							</h2>
+							<p className="hm-body">{HOURLY.details}</p>
+						</div>
+
+						<div className="hm-rate__card">
+							<span className="hm-rate__flag">{HOURLY.name}</span>
+							{/* A div, not a p: main.css forces every <p> to 14px !important on phones. */}
+							<div className="hm-rate__price">
+								{HOURLY.price}
+								<span className="hm-rate__per"> /hour</span>
+							</div>
+							<p className="hm-rate__for">{HOURLY.tagline}</p>
+							<ul className="hm-care__list hm-rate__list">
+								{HOURLY.goodFor.map((f) => (
+									<li key={f}>{f}</li>
+								))}
+							</ul>
+							<Link href="/#contact" className="hm-btn hm-btn--primary hm-rate__cta">
+								Describe the job
+								<i className="ri-arrow-right-line" aria-hidden="true" />
+							</Link>
+							<p className="hm-rate__terms">{HOURLY.terms}</p>
+						</div>
+					</div>
+
+					<ol className="hm-rate__steps" data-reveal data-reveal-stagger>
+						{HOURLY.steps.map((s, i) => (
+							<li key={s.title}>
+								<span className="hm-rate__num">{String(i + 1).padStart(2, "0")}</span>
+								<h3 className="hm-h3">{s.title}</h3>
+								<p className="hm-body">{s.body}</p>
+							</li>
+						))}
+					</ol>
 				</div>
 			</section>
 

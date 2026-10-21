@@ -1033,6 +1033,102 @@ body.hm {
 }
 
 /* --------------------------------------------------------------------------
+   Hourly rate.
+
+   Copy on the left, the rate on a lifted card on the right, then a three-step
+   "how billing works" row. The card carries a soft violet wash so the number
+   is the first thing the eye lands on in the section.
+   -------------------------------------------------------------------------- */
+
+.hm-rate {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+	gap: clamp(2rem, 5vw, 4rem);
+	align-items: center;
+}
+@media (max-width: 860px) {
+	.hm-rate { grid-template-columns: minmax(0, 1fr); gap: 2rem; }
+}
+.hm-rate__head .hm-body { max-width: 34rem; margin-top: 1rem; }
+
+.hm-rate__card {
+	position: relative;
+	overflow: hidden;
+	background:
+		radial-gradient(120% 80% at 100% 0%, var(--hm-accent-soft) 0%, transparent 60%),
+		var(--hm-surface);
+	border: 1px solid color-mix(in srgb, var(--hm-accent) 28%, var(--hm-rule));
+	border-radius: 12px;
+	padding: clamp(1.6rem, 3.5vw, 2.5rem);
+	box-shadow: var(--hm-shadow-lift);
+}
+.hm-rate__flag {
+	font-family: var(--dmMono), ui-monospace, monospace;
+	font-size: 0.64rem;
+	letter-spacing: 0.11em;
+	text-transform: uppercase;
+	color: var(--hm-accent-ink);
+	background: var(--hm-accent-soft);
+	border: 1px solid color-mix(in srgb, var(--hm-accent) 24%, transparent);
+	padding: 0.26rem 0.6rem;
+	border-radius: 3px;
+	display: inline-block;
+}
+.hm-rate__price {
+	font-size: clamp(3rem, 7vw, 4.25rem);
+	font-weight: 700;
+	letter-spacing: -0.04em;
+	color: var(--hm-ink);
+	margin: 1rem 0 0.35rem;
+	line-height: 1;
+	font-variant-numeric: tabular-nums;
+}
+.hm-rate__per {
+	font-size: 1.05rem;
+	font-weight: 500;
+	color: var(--hm-mute);
+	letter-spacing: 0;
+}
+.hm-rate__for { font-size: 0.95rem; color: var(--hm-mute); margin: 0 0 1.25rem; }
+.hm-rate__list {
+	border-top: 1px solid var(--hm-rule);
+	padding-top: 1rem;
+	grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+}
+.hm-rate__list li::before { color: var(--hm-accent); }
+.hm-rate__cta { width: 100%; justify-content: center; gap: 0.5rem; margin-top: 1.5rem; }
+.hm-rate__terms {
+	font-size: 0.82rem;
+	color: var(--hm-mute);
+	text-align: center;
+	margin: 0.85rem 0 0;
+}
+
+.hm-rate__steps {
+	list-style: none;
+	margin: clamp(2.5rem, 5vw, 3.5rem) 0 0;
+	padding: 0;
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 1rem;
+}
+@media (max-width: 780px) {
+	.hm-rate__steps { grid-template-columns: minmax(0, 1fr); }
+}
+.hm-rate__steps li {
+	border-top: 2px solid var(--hm-accent);
+	padding-top: 1.1rem;
+}
+.hm-rate__steps .hm-h3 { margin: 0.4rem 0 0.35rem; }
+.hm-rate__steps .hm-body { font-size: 0.92rem; margin: 0; }
+.hm-rate__num {
+	font-family: var(--dmMono), ui-monospace, monospace;
+	font-size: 0.75rem;
+	letter-spacing: 0.08em;
+	color: var(--hm-accent);
+}
+
+/* --------------------------------------------------------------------------
    Services
    -------------------------------------------------------------------------- */
 
