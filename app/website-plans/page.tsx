@@ -11,7 +11,7 @@ import { PlansJsonLd, BreadcrumbJsonLd } from "@/components/seo/JsonLd"
 export const metadata = pageMetadata({
 	title: "Website Plans & Pricing",
 	description:
-		"Fixed-price website packages from $499, or $50 an hour for smaller jobs. Scope, timeline and cost stated up front. Business sites, portfolios, stores and custom web apps.",
+		"Fixed-price website packages from $999, or $35 an hour for smaller jobs. Scope, timeline and cost stated up front. Business sites, portfolios, stores and custom web apps.",
 	path: "/website-plans",
 	tag: "Pricing",
 	ogTitle: "The price is on the page",
@@ -34,7 +34,7 @@ export default function WebsitePlans() {
 							Most developers make you book a call to find out what anything costs.
 							These four tiers cover the majority of website work, with scope and
 							timeline stated up front, plus a monthly care plan if you want me to
-							keep it running. Smaller jobs are $50 an hour, and product builds are
+							keep it running. Smaller jobs are $35 an hour, and product builds are
 							quoted per project.
 						</p>
 					</div>

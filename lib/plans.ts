@@ -60,7 +60,7 @@ export const MAINTENANCE = {
 /**
  * The hourly rate — for work too small or too open-ended for a fixed tier.
  *
- * ⚠️ The $50 is Hamza's number. The billing terms below (estimate first,
+ * ⚠️ The $35 is Hamza's number. The billing terms below (estimate first,
  * 30-minute increments, a pause-and-ask before going over) are sensible
  * defaults written to be edited; each one is a promise a real person keeps.
  *
@@ -70,8 +70,8 @@ export const MAINTENANCE = {
 export const HOURLY = {
 	name: "Hourly work",
 	tagline: "Fixes, features and second opinions",
-	price: "$50",
-	priceValue: 50,
+	price: "$35",
+	priceValue: 35,
 	billing: "per hour",
 	details:
 		"Not every job needs a package. If you have a bug, a feature to add to a site you already own, or a codebase you want looked at, you pay for the hours it takes and nothing else.",
@@ -95,8 +95,8 @@ export const plans: Plan[] = [
 	{
 		projectName: "Starter Business Site",
 		tagline: "Small businesses and personal brands",
-		price: "$499",
-		priceValue: 499,
+		price: "$1,000+",
+		priceValue: 1000,
 		billing: "one-time",
 		timeline: "1–2 weeks",
 		details:

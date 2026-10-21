@@ -180,11 +180,11 @@ export const FAQS: Faq[] = [
 	},
 	{
 		q: "What does it cost?",
-		a: "Fixed-price website builds start at $499 and are listed on the Plans page. Smaller jobs like bug fixes, new features or code reviews are $50 an hour, with an estimate before any time is billed. Full product builds (anything with accounts, payments, or a mobile app) are quoted per project after the scoping call, and typically land between $4,000 and $20,000 depending on how much ships in v1. You get that number after one call, not three.",
+		a: "Fixed-price website builds start at $999 and are listed on the Plans page. Smaller jobs like bug fixes, new features or code reviews are $35 an hour, with an estimate before any time is billed. Full product builds (anything with accounts, payments, or a mobile app) are quoted per project after the scoping call, and typically land between $4,000 and $20,000 depending on how much ships in v1. You get that number after one call, not three.",
 	},
 	{
 		q: "Do you offer ongoing maintenance after launch?",
-		a: "Yes. The Care Plan is $300 a month and it's optional on every tier. It covers hosting, domain and SSL renewals, monthly security and dependency updates, uptime monitoring, weekly offsite backups, a monthly Core Web Vitals and Search Console check, and up to four hours of content or design changes. It's month to month, so you can cancel any time. Plenty of clients don't take it and just email me when something needs doing, and that's fine too, it's billed at $50 an hour instead.",
+		a: "Yes. The Care Plan is $300 a month and it's optional on every tier. It covers hosting, domain and SSL renewals, monthly security and dependency updates, uptime monitoring, weekly offsite backups, a monthly Core Web Vitals and Search Console check, and up to four hours of content or design changes. It's month to month, so you can cancel any time. Plenty of clients don't take it and just email me when something needs doing, and that's fine too, it's billed at $35 an hour instead.",
 	},
 	{
 		q: "Do you work with existing codebases?",

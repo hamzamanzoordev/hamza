@@ -117,7 +117,7 @@ function serviceNode() {
 		// Remote work: the service area is global, which is a real claim here.
 		areaServed: { "@type": "Place", name: "Worldwide" },
 		availableLanguage: ["en", "ur"],
-		priceRange: `$${plans[0].priceValue}–$${CUSTOM_BUILD_RANGE.max.toLocaleString("en-US")}`,
+		priceRange: `$${Math.min(...plans.map((p) => p.priceValue))}–$${CUSTOM_BUILD_RANGE.max.toLocaleString("en-US")}`,
 		currenciesAccepted: "USD",
 		serviceType: [
 			"Web Development",
@@ -451,7 +451,7 @@ export function PlansJsonLd() {
 						"@id": `${SITE.url}/website-plans#webpage`,
 						url: absoluteUrl("/website-plans"),
 						name: "Website Plans & Pricing",
-						description: `Fixed-price website packages from $${plans[0].priceValue}, with scope, timeline and cost stated up front. Optional ${MAINTENANCE.name} at $${MAINTENANCE.priceValue}/month, or $${HOURLY.priceValue}/hour for smaller jobs.`,
+						description: `Fixed-price website packages from $${Math.min(...plans.map((p) => p.priceValue))}, with scope, timeline and cost stated up front. Optional ${MAINTENANCE.name} at $${MAINTENANCE.priceValue}/month, or $${HOURLY.priceValue}/hour for smaller jobs.`,
 						isPartOf: { "@id": ID.website },
 						inLanguage: "en",
 					},
