@@ -19,8 +19,12 @@ export default function Home1() {
 						</h1>
 
 						<p className="hm-lede">
-							I&apos;m Hamza. I take products from an idea to something real people
-							use, without you having to assemble a team to do it. Founder of{" "}
+							I&apos;m Hamza Manzoor, a developer working across{" "}
+							<Link href="/web-development">web development</Link>,{" "}
+							<Link href="/app-development">app development</Link> and{" "}
+							<Link href="/ai-automation">AI automation</Link>. I take products from
+							an idea to something real people use, without you having to assemble a
+							team to do it. Founder of{" "}
 							<a
 								href="https://zynhive.com"
 								target="_blank"

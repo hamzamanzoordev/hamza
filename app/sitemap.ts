@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next"
 import { absoluteUrl } from "@/lib/seo"
 import { caseStudies } from "@/lib/caseStudies"
 import { projects, projectImg } from "@/lib/projects"
+import { landings } from "@/lib/landing"
 
 /**
  * XML sitemap, served at /sitemap.xml.
@@ -15,10 +16,13 @@ import { projects, projectImg } from "@/lib/projects"
  * Keep CONTENT_REVIEWED honest: change the date when you change the page.
  */
 const CONTENT_REVIEWED: Record<string, string> = {
-	"/": "2026-08-26",
-	"/services": "2026-08-26",
+	"/": "2026-10-29",
+	"/services": "2026-10-29",
 	"/work": "2026-08-26",
 	"/website-plans": "2026-08-26",
+	"/web-development": "2026-10-29",
+	"/app-development": "2026-10-29",
+	"/ai-automation": "2026-10-29",
 }
 
 /** Case studies get the last day of their build year; no finer date exists. */
@@ -54,6 +58,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
 		},
 	]
 
+	const landingRoutes: MetadataRoute.Sitemap = landings.map((l) => ({
+		url: absoluteUrl(`/${l.slug}`),
+		lastModified: CONTENT_REVIEWED[`/${l.slug}`],
+		changeFrequency: "monthly",
+		priority: 0.95,
+	}))
+
 	const caseStudyRoutes: MetadataRoute.Sitemap = caseStudies.map((c) => ({
 		url: absoluteUrl(`/case-studies/${c.slug}`),
 		lastModified: caseStudyDate(c.year),
@@ -62,5 +73,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
 		images: c.gallery.slice(0, 6).map((n) => absoluteUrl(projectImg(n))),
 	}))
 
-	return [...staticRoutes, ...caseStudyRoutes]
+	return [...staticRoutes, ...landingRoutes, ...caseStudyRoutes]
 }

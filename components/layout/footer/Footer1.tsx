@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { CONTACT } from '@/lib/proof'
-import { services } from '@/lib/services'
+import { landings } from '@/lib/landing'
+import { SITE } from '@/lib/seo'
 
 export default function Footer1() {
 	return (
@@ -34,17 +35,29 @@ export default function Footer1() {
 					<div>
 						<h2 className="hm-footer__label">Services</h2>
 						<ul className="hm-footer__list">
-							{services.map((s) => (
-								<li key={s.slug}>
-									<Link href={`/services#${s.slug}`}>{s.title}</Link>
+							{landings.map((l) => (
+								<li key={l.slug}>
+									<Link href={`/${l.slug}`}>{l.tag}</Link>
 								</li>
 							))}
+							<li><Link href="/services">All services</Link></li>
 						</ul>
 					</div>
 
 					<div>
 						<h2 className="hm-footer__label">Elsewhere</h2>
 						<ul className="hm-footer__list">
+							{/* rel="me" tells crawlers these profiles belong to the site owner. */}
+							<li>
+								<a href={SITE.sameAs[0]} target="_blank" rel="me noopener noreferrer">
+									LinkedIn ↗
+								</a>
+							</li>
+							<li>
+								<a href={SITE.sameAs[1]} target="_blank" rel="me noopener noreferrer">
+									GitHub ↗
+								</a>
+							</li>
 							<li>
 								<a href="https://zynhive.com" target="_blank" rel="noopener noreferrer">
 									ZynHive ↗

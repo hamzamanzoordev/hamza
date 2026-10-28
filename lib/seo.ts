@@ -10,9 +10,9 @@ export const SITE = {
 	name: "Hamza Manzoor",
 	shortName: "Hamza",
 	brand: "Hamza Manzoor",
-	title: "Hamza Manzoor | Product Engineer: design, web, mobile, launched",
+	title: "Hamza Manzoor | Web Development, App Development & AI Automation",
 	description:
-		"I design, build and launch products end-to-end (web, mobile and backend) so founders don't have to assemble a team. Marketplaces, fintech and App Store apps.",
+		"Hamza Manzoor is a web and app developer and AI automation engineer. Websites, iOS and Android apps, and AI chatbots, designed, built and launched end to end.",
 	url: (process.env.NEXT_PUBLIC_SITE_URL || "https://hamzamanzoor.online").replace(/\/$/, ""),
 	locale: "en_US",
 	/**
@@ -24,17 +24,17 @@ export const SITE = {
 	 */
 	twitter: null as string | null,
 	/**
-	 * ⚠️ Profiles that prove this is the same person across the web. This is the
-	 * single strongest entity signal there is — it's what lets Google, and the
-	 * AI answer engines, connect this site to a real identity instead of
-	 * treating it as an anonymous page. Nothing is emitted while it's empty
-	 * because inventing profile URLs would be worse than having none.
-	 *
-	 * Add the real ones — GitHub, LinkedIn, X, Upwork, the ZynHive site — e.g.
-	 *   "https://github.com/HH-pro",
-	 *   "https://www.linkedin.com/in/<handle>/",
+	 * Profiles that prove this is the same person across the web. This is the
+	 * single strongest entity signal there is: it's what lets Google, and the
+	 * AI answer engines, connect this site to a real identity. Person.sameAs,
+	 * the footer and llms.txt all read this. Add X, Upwork etc. as they exist.
 	 */
-	sameAs: [] as string[],
+	sameAs: [
+		"https://www.linkedin.com/in/hamzamanzoordev/",
+		"https://github.com/hamzamanzoordev",
+	] as string[],
+	/** Handles people may search instead of the full name. */
+	alternateNames: ["hamzamanzoordev", "Hamza Manzoor Dev"],
 	/** The company Hamza founded. Surfaces in Person.worksFor / founder-of. */
 	company: {
 		name: "ZynHive",
@@ -42,14 +42,17 @@ export const SITE = {
 	},
 	keywords: [
 		"Hamza Manzoor",
-		"end-to-end product developer",
-		"freelance product engineer",
-		"build and launch an app",
-		"solo full stack developer",
-		"React Native developer",
+		"Hamza Manzoor developer",
+		"hamzamanzoordev",
+		"web development",
+		"app development",
+		"AI automation",
+		"freelance web developer",
+		"mobile app developer",
+		"AI chatbot developer",
 		"Next.js developer",
-		"MVP developer for founders",
-		"AI integration developer",
+		"React Native developer",
+		"Flutter developer",
 	],
 } as const
 

@@ -2,6 +2,13 @@ import Layout from "@/components/layout/Layout"
 import Link from "next/link"
 import { pageMetadata } from "@/lib/seo"
 import { services } from "@/lib/services"
+
+/** Service slug -> dedicated landing page, where one exists. */
+const LANDING: Record<string, string> = {
+	"web-development": "/web-development",
+	"mobile-apps": "/app-development",
+	"ai-integration": "/ai-automation",
+}
 import { projects } from "@/lib/projects"
 import SectionHead from "@/components/hm/SectionHead"
 import ProcessList from "@/components/hm/ProcessList"
@@ -114,6 +121,12 @@ export default function Services() {
 												<li key={d}>{d}</li>
 											))}
 										</ul>
+										{LANDING[s.slug] && (
+											<Link href={LANDING[s.slug]} className="hm-cs-aside__link">
+												More on {s.title.toLowerCase()}
+												<i className="ri-arrow-right-line" aria-hidden="true" />
+											</Link>
+										)}
 									</div>
 								</article>
 							)

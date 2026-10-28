@@ -1,4 +1,4 @@
-import { FAQS, CONTACT } from "@/lib/proof"
+import { FAQS, CONTACT, type Faq } from "@/lib/proof"
 import { FaqJsonLd } from "@/components/seo/JsonLd"
 
 /**
@@ -6,10 +6,18 @@ import { FaqJsonLd } from "@/components/seo/JsonLd"
  * in a tinted panel on the right that bleeds to the viewport edge on wide
  * screens. Native details/summary — keyboard accessible, works without JS.
  */
-export default function FaqList() {
+export default function FaqList({
+	faqs = FAQS,
+	path = "/",
+}: {
+	/** Page-specific questions. Defaults to the site-wide FAQ. */
+	faqs?: Faq[]
+	/** Page the FAQ lives on, so its schema @id points at the right URL. */
+	path?: string
+} = {}) {
 	return (
 		<section className="hm-section hm-section--ruled" id="faq">
-			<FaqJsonLd />
+			<FaqJsonLd faqs={faqs} path={path} />
 			<div className="hm-wrap">
 				<div className="hm-faq-split">
 					<div className="hm-faq-intro" data-reveal>
@@ -28,7 +36,7 @@ export default function FaqList() {
 					</div>
 
 					<div className="hm-faq-panel" data-reveal>
-						{FAQS.map((f, i) => (
+						{faqs.map((f, i) => (
 							<details className="hm-faq__item" key={f.q}>
 								<summary>
 									<span className="hm-faq__num">{i + 1}.</span>

@@ -12,6 +12,7 @@ import { services } from "@/lib/services"
 import { plans, CUSTOM_BUILD_RANGE, MAINTENANCE, HOURLY } from "@/lib/plans"
 import { projects } from "@/lib/projects"
 import { caseStudies } from "@/lib/caseStudies"
+import { landings } from "@/lib/landing"
 
 /**
  * /llms.txt — the site, written for a language model rather than a browser.
@@ -75,6 +76,16 @@ function build(): string {
 	push("")
 
 	/* -------------------------------------------------- Services */
+	push("## Web development, app development and AI automation", "")
+	for (const l of landings) {
+		push(`### ${l.tag}`, "")
+		push(l.answer, "")
+		for (const o of l.offers) push(`- **${o.title}:** ${o.body}`)
+		push(`- Stack: ${l.stack.join(", ")}`)
+		push(`- Page: ${absoluteUrl(`/${l.slug}`)}`, "")
+		for (const f of l.faqs) push(`**Q: ${f.q}**`, "", `A: ${f.a}`, "")
+	}
+
 	push("## Services", "")
 	for (const s of services) {
 		push(`### ${s.title}`)
@@ -183,6 +194,7 @@ function build(): string {
 	push("## Pages", "")
 	push(`- [Home](${absoluteUrl("/")}): positioning, services preview, featured work, FAQ`)
 	push(`- [Services](${absoluteUrl("/services")}): the four service lines in full`)
+	for (const l of landings) push(`- [${l.tag}](${absoluteUrl(`/${l.slug}`)}): ${l.metaDescription}`)
 	push(`- [Work](${absoluteUrl("/work")}): all ${projects.length} documented projects`)
 	push(`- [Website Plans](${absoluteUrl("/website-plans")}): fixed prices and what's in each`)
 	for (const c of caseStudies) {

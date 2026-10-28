@@ -2336,3 +2336,15 @@ body.reveal-ready .hm-hero__figure {
 .hm-nav .dark-light-switcher:hover { background: var(--hm-sunk); }
 /* Own the icon colour: the template's .text-white maps to near-black in dark mode. */
 .hm-nav .dark-light-switcher i { font-size: 1.05rem; line-height: 1; color: var(--hm-ink); }
+
+/* Service landing: the self-contained answer paragraph under the hero. */
+.hm-answer {
+	margin: 2.25rem 0 0;
+	padding: 1.1rem 1.35rem;
+	border-left: 3px solid var(--hm-accent);
+	background: var(--hm-surface, transparent);
+	color: var(--hm-ink-soft);
+	font-size: 0.98rem;
+	line-height: 1.65;
+	max-width: 62ch;
+}

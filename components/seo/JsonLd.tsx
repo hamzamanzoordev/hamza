@@ -1,5 +1,6 @@
 import { SITE, absoluteUrl } from "@/lib/seo"
-import { FAQS, CONTACT, PROJECTS_DELIVERED, liveProjects } from "@/lib/proof"
+import { FAQS, CONTACT, PROJECTS_DELIVERED, liveProjects, type Faq } from "@/lib/proof"
+import type { Landing } from "@/lib/landing"
 import { services } from "@/lib/services"
 import { plans, CUSTOM_BUILD_RANGE, MAINTENANCE, HOURLY } from "@/lib/plans"
 import { projects, projectImg, categoryLabel } from "@/lib/projects"
@@ -44,18 +45,26 @@ export function JsonLd({ data }: { data: Record<string, unknown> | Record<string
 /**
  * The Person node. Everything else on the site points back at this.
  *
- * `sameAs` is the strongest identity signal available and it stays omitted
- * while SITE.sameAs is empty — see the note there. Emitting an empty array is
- * worse than emitting nothing, since it reads as "no profiles exist".
+ * `sameAs` is the strongest identity signal available: it links this node to
+ * the LinkedIn and GitHub profiles in SITE.sameAs, which is how Google and the
+ * answer engines decide the "Hamza Manzoor" on each is the same person.
  */
 function personNode() {
 	return {
 		"@type": "Person",
 		"@id": ID.person,
 		name: SITE.name,
+		givenName: "Hamza",
+		familyName: "Manzoor",
+		alternateName: [...SITE.alternateNames],
 		url: SITE.url,
 		image: absoluteUrl("/assets/imgs/hero/hero-1/profile.png"),
-		jobTitle: "Product Engineer",
+		jobTitle: "Web & App Developer, AI Automation Engineer",
+		hasOccupation: {
+			"@type": "Occupation",
+			name: "Software Developer",
+			skills: "Web development, mobile app development, AI automation",
+		},
 		description: SITE.description,
 		email: `mailto:${CONTACT.email}`,
 		telephone: CONTACT.phoneHref.replace("tel:", ""),
@@ -68,11 +77,14 @@ function personNode() {
 		worksFor: { "@id": ID.company },
 		founder: { "@id": ID.company },
 		knowsAbout: [
-			"End-to-end product development",
 			"Web Development",
+			"App Development",
 			"Mobile App Development",
+			"AI Automation",
+			"AI Chatbots",
+			"End-to-end product development",
 			"UI/UX Design",
-			"AI integration",
+			"Technical SEO",
 			"React",
 			"Next.js",
 			"React Native",
@@ -121,9 +133,10 @@ function serviceNode() {
 		currenciesAccepted: "USD",
 		serviceType: [
 			"Web Development",
+			"App Development",
 			"Mobile App Development",
+			"AI Automation",
 			"UI/UX Design",
-			"AI/ML Development",
 		],
 		hasOfferCatalog: {
 			"@type": "OfferCatalog",
@@ -167,13 +180,16 @@ export function HomeJsonLd() {
 					},
 					serviceNode(),
 					{
-						"@type": "WebPage",
+						// ProfilePage is Google's documented type for a page about one
+						// person; mainEntity is what ties a "Hamza Manzoor" query to it.
+						"@type": "ProfilePage",
 						"@id": `${SITE.url}/#webpage`,
 						url: SITE.url,
 						name: SITE.title,
 						description: SITE.description,
 						isPartOf: { "@id": ID.website },
 						about: { "@id": ID.person },
+						mainEntity: { "@id": ID.person },
 						primaryImageOfPage: absoluteUrl("/assets/imgs/hero/hero-1/profile.png"),
 						inLanguage: "en",
 						// Tells voice and answer surfaces which passages carry the claim.
@@ -196,17 +212,18 @@ export function HomeJsonLd() {
  * willing to say when the answer is "hire someone else". That is exactly the
  * shape an answer engine cites, which is why the ids are stable.
  */
-export function FaqJsonLd() {
+export function FaqJsonLd({ faqs = FAQS, path = "/" }: { faqs?: Faq[]; path?: string } = {}) {
+	const base = absoluteUrl(path).replace(/\/$/, "")
 	return (
 		<JsonLd
 			data={{
 				"@context": "https://schema.org",
 				"@type": "FAQPage",
-				"@id": `${SITE.url}/#faq`,
+				"@id": `${base}/#faq`,
 				inLanguage: "en",
-				mainEntity: FAQS.map((f, i) => ({
+				mainEntity: faqs.map((f, i) => ({
 					"@type": "Question",
-					"@id": `${SITE.url}/#faq-${i + 1}`,
+					"@id": `${base}/#faq-${i + 1}`,
 					name: f.q,
 					acceptedAnswer: { "@type": "Answer", text: f.a },
 				})),
@@ -534,6 +551,64 @@ export function CaseStudyJsonLd({
 						keywords: stack.join(", "),
 						...(projectUrl ? { url: projectUrl } : {}),
 						subjectOf: { "@id": `${url}#article` },
+					},
+				],
+			}}
+		/>
+	)
+}
+
+/**
+ * A service landing page (/web-development, /app-development, /ai-automation):
+ * one Service node hanging off the Person, plus the WebPage that describes it.
+ * The FAQPage block comes from <FaqList>, rendered on the same page.
+ */
+export function ServiceLandingJsonLd({ landing }: { landing: Landing }) {
+	const url = absoluteUrl(`/${landing.slug}`)
+	return (
+		<JsonLd
+			data={{
+				"@context": "https://schema.org",
+				"@graph": [
+					personNode(),
+					{
+						"@type": "Service",
+						"@id": `${url}#service`,
+						name: landing.metaTitle,
+						serviceType: landing.serviceType,
+						description: landing.answer,
+						url,
+						provider: { "@id": ID.person },
+						areaServed: { "@type": "Place", name: "Worldwide" },
+						availableLanguage: ["en", "ur"],
+						hasOfferCatalog: {
+							"@type": "OfferCatalog",
+							name: `${landing.serviceType} services`,
+							itemListElement: landing.offers.map((o) => ({
+								"@type": "Offer",
+								itemOffered: {
+									"@type": "Service",
+									name: o.title,
+									description: o.body,
+									provider: { "@id": ID.person },
+								},
+							})),
+						},
+					},
+					{
+						"@type": "WebPage",
+						"@id": `${url}#webpage`,
+						url,
+						name: landing.metaTitle,
+						description: landing.metaDescription,
+						isPartOf: { "@id": ID.website },
+						about: { "@id": `${url}#service` },
+						author: { "@id": ID.person },
+						inLanguage: "en",
+						speakable: {
+							"@type": "SpeakableSpecification",
+							cssSelector: [".hm-h1", ".hm-answer"],
+						},
 					},
 				],
 			}}
