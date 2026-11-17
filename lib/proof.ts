@@ -197,7 +197,7 @@ export const FAQS: Faq[] = [
  * ------------------------------------------------------------------ */
 
 export const CONTACT = {
-	email: "info@hamzamanzoor.online",
+	email: "hamza@zynhive.com",
 	phone: "+92 311 7836704",
 	phoneHref: "tel:+923117836704",
 	whatsapp: "https://wa.me/923117836704",

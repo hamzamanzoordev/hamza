@@ -3,7 +3,7 @@ import { Resend } from 'resend'
 
 export const runtime = 'nodejs'
 
-const TO_EMAIL = process.env.CONTACT_TO_EMAIL || 'Info@hamzamanzoor.online'
+const TO_EMAIL = process.env.CONTACT_TO_EMAIL || 'hamza@zynhive.com'
 // `from` must be on a domain verified in your Resend account.
 const FROM_EMAIL = process.env.CONTACT_FROM_EMAIL || 'Hamza Manzoor <Info@hamzamanzoor.online>'
 
