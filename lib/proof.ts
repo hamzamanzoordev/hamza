@@ -206,3 +206,32 @@ export const CONTACT = {
 	mapsUrl: "https://maps.google.com/maps?q=Narowal,+Punjab,+Pakistan",
 	availability: "Available for new projects",
 } as const
+
+/* ------------------------------------------------------------------ *
+ * Booking: Google Calendar appointment schedule
+ * ------------------------------------------------------------------ */
+
+/**
+ * Public booking page from Google Calendar → Appointment schedule →
+ * "Share" → "Website embed" (the URL inside the iframe's src).
+ * Looks like: https://calendar.google.com/calendar/appointments/schedules/AcZssZ...
+ *
+ * Leave empty and the booking section hides itself, and every "Book a call"
+ * button falls back to the contact form.
+ */
+export const BOOKING_URL = "https://calendar.google.com/calendar/appointments/schedules/AcZssZ3af1PdP6-7H5r1JpizIZSx3ANDpkMm1E-0hPbCco8LPGf1NiVUHtIJs1rE6c7vm5Lp_cOsAViJ"
+
+/** Where every "Book a call" button points. */
+export const BOOK_HREF = BOOKING_URL ? "/#book" : "/#contact"
+
+/** The booking page in embed mode (?gv=true), as Google's embed snippet uses. */
+export const bookingEmbedUrl = (url: string = BOOKING_URL): string => {
+	if (!url) return ""
+	try {
+		const u = new URL(url)
+		u.searchParams.set("gv", "true")
+		return u.toString()
+	} catch {
+		return url
+	}
+}

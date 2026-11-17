@@ -17,6 +17,7 @@ import FaqList from "@/components/hm/FaqList"
 import ClosingCTA from "@/components/hm/ClosingCTA"
 import Metrics from "@/components/hm/Metrics"
 import { ServicesJsonLd, BreadcrumbJsonLd } from "@/components/seo/JsonLd"
+import { BOOK_HREF } from "@/lib/proof"
 
 export const metadata = pageMetadata({
 	title: "Services",
@@ -50,7 +51,7 @@ export default function Services() {
 							why things ship in weeks rather than quarters.
 						</p>
 						<div className="hm-actions">
-							<Link href="/#contact" className="hm-btn hm-btn--primary">
+							<Link href={BOOK_HREF} className="hm-btn hm-btn--primary">
 								Book a Call
 								<i className="ri-arrow-right-line" />
 							</Link>

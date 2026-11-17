@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { CONTACT } from "@/lib/proof"
+import { CONTACT, BOOK_HREF } from "@/lib/proof"
 
 const points = [
 	{ icon: "ri-time-line", text: "30 minutes, no commitment" },
@@ -37,7 +37,7 @@ export default function BookCallBand() {
 					</div>
 
 					<div className="hm-band__action">
-						<Link href="/#contact" className="hm-band__cta">
+						<Link href={BOOK_HREF} className="hm-band__cta">
 							Book a Call
 							<i className="ri-arrow-right-line" />
 						</Link>

@@ -7,6 +7,7 @@ import ClosingCTA from "@/components/hm/ClosingCTA"
 import { ServiceLandingJsonLd, BreadcrumbJsonLd } from "@/components/seo/JsonLd"
 import { landings, type Landing } from "@/lib/landing"
 import { projects, categoryLabel, resolveImg } from "@/lib/projects"
+import { BOOK_HREF } from "@/lib/proof"
 
 /**
  * The body of /web-development, /app-development and /ai-automation.
@@ -41,7 +42,7 @@ export default function ServiceLanding({ landing }: { landing: Landing }) {
 						</h1>
 						<p className="hm-lede">{landing.lede}</p>
 						<div className="hm-actions">
-							<Link href="/#contact" className="hm-btn hm-btn--primary">
+							<Link href={BOOK_HREF} className="hm-btn hm-btn--primary">
 								Book a Call
 								<i className="ri-arrow-right-line" />
 							</Link>

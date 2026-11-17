@@ -7,6 +7,7 @@ import FaqList from "@/components/hm/FaqList"
 import Testimonials from "@/components/hm/Testimonials"
 import ClosingCTA from "@/components/hm/ClosingCTA"
 import { PlansJsonLd, BreadcrumbJsonLd } from "@/components/seo/JsonLd"
+import { BOOK_HREF } from "@/lib/proof"
 
 export const metadata = pageMetadata({
 	title: "Website Plans & Pricing",
@@ -72,7 +73,7 @@ export default function WebsitePlans() {
 									))}
 								</ul>
 								<Link
-									href="/#contact"
+									href={BOOK_HREF}
 									className={`hm-btn ${p.highlight ? "hm-btn--primary" : "hm-btn--ghost"}`}
 								>
 									Start this plan
@@ -110,7 +111,7 @@ export default function WebsitePlans() {
 								))}
 							</ul>
 							<Link
-								href="/#contact"
+								href={BOOK_HREF}
 								className="hm-btn hm-btn--ghost hm-mt-sm"
 								style={{ marginTop: "1.75rem" }}
 							>
@@ -148,7 +149,7 @@ export default function WebsitePlans() {
 									<li key={f}>{f}</li>
 								))}
 							</ul>
-							<Link href="/#contact" className="hm-btn hm-btn--primary hm-rate__cta">
+							<Link href={BOOK_HREF} className="hm-btn hm-btn--primary hm-rate__cta">
 								Describe the job
 								<i className="ri-arrow-right-line" aria-hidden="true" />
 							</Link>
@@ -178,7 +179,7 @@ export default function WebsitePlans() {
 							</>
 						}
 						lede="Anything with accounts, payments, or a mobile app is too variable for a price tag. Those land between $4,000 and $20,000 depending on how much ships in v1, and I'll give you the number after one call, not three."
-						action={{ label: "Book that call", href: "/#contact" }}
+						action={{ label: "Book that call", href: BOOK_HREF }}
 					/>
 				</div>
 			</section>

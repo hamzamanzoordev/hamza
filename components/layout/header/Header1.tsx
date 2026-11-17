@@ -7,6 +7,7 @@ import { useEffect, useRef, useState } from 'react'
 import ThemeSwitch from '@/components/elements/ThemeSwitch'
 import { projects, resolveImg } from '@/lib/projects'
 import { caseStudies } from '@/lib/caseStudies'
+import { BOOK_HREF } from "@/lib/proof"
 
 export default function Header1({ isMobileMenu, handleMobileMenu }: any) {
   const pathname = usePathname()
@@ -123,7 +124,7 @@ export default function Header1({ isMobileMenu, handleMobileMenu }: any) {
 
             <ThemeSwitch />
 
-            <Link href="/#contact" className="hm-nav__cta">
+            <Link href={BOOK_HREF} className="hm-nav__cta">
               Book a Call
             </Link>
           </nav>
@@ -171,7 +172,7 @@ export default function Header1({ isMobileMenu, handleMobileMenu }: any) {
               </Link>
             </li>
           </ul>
-          <Link href="/#contact" className="hm-nav__cta" onClick={handleMobileMenu}>
+          <Link href={BOOK_HREF} className="hm-nav__cta" onClick={handleMobileMenu}>
             Book a Call
           </Link>
         </div>

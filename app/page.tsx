@@ -4,6 +4,7 @@ import Service1 from "@/components/sections/Service1"
 import Projects1 from "@/components/sections/Projects1"
 import Resume1 from "@/components/sections/Resume1"
 import Contact1 from "@/components/sections/Contact1"
+import BookingCalendar from "@/components/hm/BookingCalendar"
 import ProofStrip from "@/components/hm/ProofStrip"
 import BookCallBand from "@/components/hm/BookCallBand"
 import ProcessList from "@/components/hm/ProcessList"
@@ -26,6 +27,7 @@ export default function Home() {
 				<Resume1 />
 				<Testimonials />
 				<FaqList />
+				<BookingCalendar />
 				<Contact1 />
 				<ClosingCTA />
 			</Layout>

@@ -9,6 +9,7 @@ import { pageMetadata, absoluteUrl } from "@/lib/seo"
 import { caseStudies, getCaseStudy, getCaseStudyProject } from "@/lib/caseStudies"
 import { resolveImg } from "@/lib/projects"
 import { SITE } from "@/lib/seo"
+import { BOOK_HREF } from "@/lib/proof"
 
 export function generateStaticParams() {
 	return caseStudies.map((c) => ({ slug: c.slug }))
@@ -87,7 +88,7 @@ export default async function CaseStudyPage({
 										<i className="ri-arrow-right-up-line" />
 									</a>
 								)}
-								<Link href="/#contact" className="hm-btn hm-btn--ghost">
+								<Link href={BOOK_HREF} className="hm-btn hm-btn--ghost">
 									Book a Call
 								</Link>
 							</div>

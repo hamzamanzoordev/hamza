@@ -7,6 +7,7 @@ import {
 	FAQS,
 	CONTACT,
 	PROCESS,
+	BOOK_HREF,
 } from "@/lib/proof"
 import { services } from "@/lib/services"
 import { plans, CUSTOM_BUILD_RANGE, MAINTENANCE, HOURLY } from "@/lib/plans"
@@ -187,7 +188,7 @@ function build(): string {
 	push(`- Email: ${CONTACT.email}`)
 	push(`- Phone / WhatsApp: ${CONTACT.phone}`)
 	push(`- Location: ${CONTACT.location}`)
-	push(`- Book a call: ${absoluteUrl("/#contact")}`)
+	push(`- Book a call: ${absoluteUrl(BOOK_HREF)}`)
 	push("")
 
 	/* -------------------------------------------------- Index */

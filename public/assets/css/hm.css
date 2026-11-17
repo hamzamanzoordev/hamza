@@ -3141,3 +3141,101 @@ a.hm-case__pill:hover { color: var(--hm-accent); transform: translateY(-1px); }
 }
 .hm-cases.is-stacking .hm-case { box-shadow: 0 30px 70px -34px rgba(11, 18, 32, 0.42); }
 .hm-cases.is-stacking .hm-case:hover .hm-case__shot img { transform: none; }
+
+/* -- Booking: Google Calendar appointment schedule ----------------------- */
+
+.hm-book {
+	display: grid;
+	grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.6fr);
+	gap: 16px;
+	align-items: stretch;
+}
+@media (max-width: 960px) {
+	.hm-book { grid-template-columns: minmax(0, 1fr); }
+}
+.hm-book__aside {
+	display: flex;
+	flex-direction: column;
+	padding: clamp(1.5rem, 3vw, 2rem);
+	border-radius: var(--hm-radius);
+	color: var(--hm-stage-ink);
+	background:
+		radial-gradient(26rem 16rem at 100% 0%, rgba(14, 165, 233, 0.28), transparent 65%),
+		var(--hm-stage);
+	border: 1px solid var(--hm-stage-line);
+}
+.hm-book__label {
+	margin: 0 0 1.25rem;
+	font-family: var(--mono), ui-monospace, monospace;
+	font-size: 0.7rem;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+	color: #7dd3fc;
+}
+.hm-book__list { list-style: none; margin: 0; padding: 0; display: grid; gap: 1.1rem; }
+.hm-book__list li { display: flex; gap: 0.85rem; align-items: flex-start; }
+.hm-book__icon {
+	width: 36px;
+	height: 36px;
+	flex: none;
+	display: grid;
+	place-items: center;
+	border-radius: 10px;
+	font-size: 1.05rem;
+	color: #7dd3fc;
+	background: rgba(56, 189, 248, 0.12);
+	border: 1px solid rgba(56, 189, 248, 0.22);
+}
+.hm-book__list strong { display: block; font-size: 0.98rem; font-weight: 600; color: #fff; }
+.hm-book__list li > span:last-child > span { display: block; margin-top: 0.15rem; font-size: 0.88rem; line-height: 1.5; color: var(--hm-stage-mute); }
+.hm-book__alt {
+	margin-top: auto;
+	padding-top: 1.5rem;
+	border-top: 1px solid var(--hm-stage-line);
+	display: grid;
+	gap: 0.5rem;
+}
+.hm-book__alt p { margin: 1.25rem 0 0.25rem; font-size: 0.85rem; color: var(--hm-stage-mute); }
+.hm-book__alt a {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	font-size: 0.92rem;
+	color: #fff;
+	text-decoration: none;
+}
+.hm-book__alt a:hover { color: #7dd3fc; }
+
+.hm-book__frame {
+	display: flex;
+	flex-direction: column;
+	border-radius: var(--hm-radius);
+	overflow: hidden;
+	background: #fff; /* Google's scheduler is light-only */
+	border: 1px solid var(--hm-rule);
+	box-shadow: var(--hm-shadow);
+}
+.hm-book__frame iframe {
+	display: block;
+	width: 100%;
+	height: 680px;
+	border: 0;
+	flex: 1;
+}
+@media (max-width: 600px) {
+	.hm-book__frame iframe { height: 760px; }
+}
+.hm-book__open {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.35rem;
+	padding: 0.8rem 1rem;
+	font-size: 0.85rem;
+	font-weight: 500;
+	color: #0369a1;
+	text-decoration: none;
+	border-top: 1px solid #e2e8f0;
+	background: #f8fafc;
+}
+.hm-book__open:hover { color: #0284c7; text-decoration: underline; }

@@ -1,4 +1,5 @@
 import Link from "next/link"
+import { BOOK_HREF } from "@/lib/proof"
 
 interface Props {
 	title?: React.ReactNode
@@ -18,7 +19,7 @@ export default function ClosingCTA({
 		</>
 	),
 	body = "Tell me what you're making and who it's for. I'll tell you the smallest version worth shipping, and what it costs.",
-	primary = { label: "Book a Call", href: "/#contact" },
+	primary = { label: "Book a Call", href: BOOK_HREF },
 	secondary = { label: "See the work", href: "/work" },
 }: Props) {
 	return (

@@ -1,6 +1,6 @@
 import Link from "next/link"
 import Image from "next/image"
-import { CONTACT, METRICS } from "@/lib/proof"
+import { CONTACT, METRICS, BOOK_HREF } from "@/lib/proof"
 
 /** Delivered, live-and-verifiable, years. All sourced in lib/proof.ts. */
 const heroStats = [METRICS[0], METRICS[2], METRICS[3]]
@@ -33,7 +33,7 @@ export default function Home1() {
 						</p>
 
 						<div className="hm-actions">
-							<Link href="/#contact" className="hm-btn hm-btn--primary hm-btn--lg">
+							<Link href={BOOK_HREF} className="hm-btn hm-btn--primary hm-btn--lg">
 								Book a free call
 								<i className="ri-arrow-right-line" />
 							</Link>
