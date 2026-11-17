@@ -3239,3 +3239,36 @@ a.hm-case__pill:hover { color: var(--hm-accent); transform: translateY(-1px); }
 	background: #f8fafc;
 }
 .hm-book__open:hover { color: #0284c7; text-decoration: underline; }
+
+/* -- Icon alignment ------------------------------------------------------ */
+/* main.css (template) styles every <i> with margin-left: -10px and a fixed
+   24px size/line-height, which pushed icons off-centre in their boxes and
+   ignored the sizes set here. Same specificity as that rule (0,0,1) and
+   loaded after it, so it wins there, while every class-based icon rule in
+   this file still takes precedence. */
+i:where([class^="ri-"], [class*=" ri-"]) {
+	margin-left: 0;
+	font-size: inherit;
+	line-height: 1;
+	display: inline-block;
+	vertical-align: middle;
+}
+/* Icons that sit inside a fixed square: true centre, no inline gaps. */
+.hm-svc__icon i,
+.hm-book__icon i,
+.hm-hero__badge-icon i,
+.hm-float__tick i,
+.hm-nav .dark-light-switcher i { display: block; line-height: 1; }
+/* Contact rows: icon in a soft square, centred against label + value. */
+.hm-contact-item { align-items: center; }
+.hm-contact-item i {
+	width: 40px;
+	height: 40px;
+	display: grid;
+	place-items: center;
+	border-radius: 11px;
+	font-size: 1.1rem;
+	line-height: 1;
+	background: var(--hm-accent-soft);
+	border: 1px solid color-mix(in srgb, var(--hm-accent) 16%, transparent);
+}
