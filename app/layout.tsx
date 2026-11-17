@@ -8,25 +8,17 @@ import "../public/assets/css/hm.css"
 
 
 import type { Metadata } from "next"
-import { Urbanist, Playfair_Display, DM_Mono } from "next/font/google"
+import { Geist, Geist_Mono } from "next/font/google"
 import { SITE, ogImageUrl } from "@/lib/seo"
 
-const urbanist = Urbanist({
-	weight: ['300', '400', '500', '600', '700'],
+const sans = Geist({
 	subsets: ['latin'],
-	variable: "--urbanist",
+	variable: "--sans",
 	display: 'swap',
 })
-const playfair_display = Playfair_Display({
-	weight: ['400', '500', '600', '700'],
+const mono = Geist_Mono({
 	subsets: ['latin'],
-	variable: "--playpair",
-	display: 'swap',
-})
-const dmMono = DM_Mono({
-	weight: ['300', '400', '500'],
-	subsets: ['latin'],
-	variable: "--dmMono",
+	variable: "--mono",
 	display: 'swap',
 })
 export const metadata: Metadata = {
@@ -90,8 +82,10 @@ export default function RootLayout({
 	children: React.ReactNode
 }>) {
 	return (
-		<html lang="en" data-bs-theme="light">
-			<body className={`hm ${urbanist.variable} ${playfair_display.variable} ${dmMono.variable}`}>
+		<html lang="en" data-bs-theme="light" suppressHydrationWarning>
+			{/* The inline script below adds `reveal-ready` before hydration, and the
+			    theme switch sets data-bs-theme on <html>. Both are intentional. */}
+			<body className={`hm ${sans.variable} ${mono.variable}`} suppressHydrationWarning>
 				<script
 					dangerouslySetInnerHTML={{
 						__html:

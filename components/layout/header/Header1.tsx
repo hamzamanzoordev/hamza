@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { useEffect, useRef, useState } from 'react'
 import ThemeSwitch from '@/components/elements/ThemeSwitch'
@@ -93,7 +94,7 @@ export default function Header1({ isMobileMenu, handleMobileMenu }: any) {
                         key={c.slug}
                       >
                         <span className="hm-dropdown__thumb">
-                          <img src={resolveImg(c.gallery[0])} alt="" loading="lazy" />
+                          <Image src={resolveImg(c.gallery[0])} alt="" width={124} height={92} sizes="62px" />
                         </span>
                         <span className="hm-dropdown__body">
                           <span className="hm-dropdown__title">{c.navLabel}</span>

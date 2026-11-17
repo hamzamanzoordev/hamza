@@ -1,13 +1,18 @@
 import Link from "next/link"
 import Image from "next/image"
-import { CONTACT, PROJECTS_DELIVERED } from "@/lib/proof"
+import { CONTACT, METRICS } from "@/lib/proof"
+
+/** Delivered, live-and-verifiable, years. All sourced in lib/proof.ts. */
+const heroStats = [METRICS[0], METRICS[2], METRICS[3]]
+
+const stack = ["React", "Next.js", "React Native", "SwiftUI", "Flutter", "Node", "AI"]
 
 export default function Home1() {
 	return (
 		<section className="hm-hero">
 			<div className="hm-wrap">
 				<div className="hm-hero__grid">
-					<div>
+					<div className="hm-hero__copy">
 						<span className="hm-status">
 							<span className="hm-status__dot" />
 							{CONTACT.availability}
@@ -22,23 +27,14 @@ export default function Home1() {
 							I&apos;m Hamza Manzoor, a developer working across{" "}
 							<Link href="/web-development">web development</Link>,{" "}
 							<Link href="/app-development">app development</Link> and{" "}
-							<Link href="/ai-automation">AI automation</Link>. I take products from
-							an idea to something real people use, without you having to assemble a
-							team to do it. Founder of{" "}
-							<a
-								href="https://zynhive.com"
-								target="_blank"
-								rel="noopener noreferrer"
-								style={{ color: "var(--hm-accent)", fontWeight: 600 }}
-							>
-								ZynHive
-							</a>
-							.
+							<Link href="/ai-automation">AI automation</Link>. I take products from an
+							idea to something real people use, without you having to assemble a team
+							to do it.
 						</p>
 
 						<div className="hm-actions">
 							<Link href="/#contact" className="hm-btn hm-btn--primary hm-btn--lg">
-								Book a Call
+								Book a free call
 								<i className="ri-arrow-right-line" />
 							</Link>
 							<Link href="/work" className="hm-btn hm-btn--ghost hm-btn--lg">
@@ -47,13 +43,18 @@ export default function Home1() {
 						</div>
 
 						<p className="hm-reassure">
-							30-minute call &middot; no commitment &middot; you leave with a real number
+							<i className="ri-time-line" aria-hidden="true" /> 30-minute call &middot; no
+							commitment &middot; you leave with a real number
 						</p>
 
-						<p className="hm-mono hm-hero__stack">
-							React &middot; Next.js &middot; React Native &middot; Flutter &middot; Node
-							&middot; SwiftUI &middot; AI integration
-						</p>
+						<dl className="hm-hero__stats">
+							{heroStats.map((m) => (
+								<div className="hm-hero__stat" key={m.label}>
+									<dt>{m.label}</dt>
+									<dd>{m.value}</dd>
+								</div>
+							))}
+						</dl>
 					</div>
 
 					<div className="hm-hero__figure">
@@ -64,15 +65,30 @@ export default function Home1() {
 								width={500}
 								height={500}
 								priority
-								sizes="(max-width: 900px) 20rem, 26rem"
+								sizes="(max-width: 900px) 22rem, 28rem"
 							/>
 						</div>
 
-						{/* Real figure — see PROJECTS_DELIVERED in lib/proof.ts. */}
-						<div className="hm-hero__chip">
-							<span className="hm-hero__chip-value">{PROJECTS_DELIVERED}</span>
-							<span className="hm-hero__chip-label">Projects delivered</span>
+						<div className="hm-hero__badge">
+							<span className="hm-hero__badge-icon" aria-hidden="true">
+								<i className="ri-verified-badge-fill" />
+							</span>
+							<span className="hm-hero__badge-text">
+								<strong>Hamza Manzoor</strong>
+								<span>
+									Product engineer &middot; Founder of{" "}
+									<a href="https://zynhive.com" target="_blank" rel="noopener noreferrer">
+										ZynHive
+									</a>
+								</span>
+							</span>
 						</div>
+
+						<ul className="hm-hero__stack" aria-label="Daily stack">
+							{stack.map((t) => (
+								<li key={t}>{t}</li>
+							))}
+						</ul>
 					</div>
 				</div>
 			</div>

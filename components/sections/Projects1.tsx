@@ -1,8 +1,5 @@
-"use client"
-
-import Link from "next/link"
-import PortfolioHighlights from "../elements/PortfolioHighlights"
 import SectionHead from "@/components/hm/SectionHead"
+import CaseStudyStack from "@/components/hm/CaseStudyStack"
 
 export default function Projects1() {
 	return (
@@ -18,7 +15,8 @@ export default function Projects1() {
 					lede="Marketplaces, fintech platforms, and App Store apps. Every one of these has a link you can open."
 					action={{ label: "All projects", href: "/work" }}
 				/>
-				<PortfolioHighlights />
+
+				<CaseStudyStack />
 			</div>
 		</section>
 	)
